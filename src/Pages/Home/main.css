@@ -1,7 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Kreon&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ephesis&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
 
 .main-container {
-    background-image: url("../../Assets/Images/background-img.png");
+    background-image: url("../../Assets/Images/background.png");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -12,4 +15,14 @@
 
 .kreon-font{
     font-family: 'Kreon', serif;
+}
+
+.pacifico{
+    font-family: 'Pacifico', cursive;
+    font-weight: lighter;
+}
+
+.dancing-script{
+    font-family: 'Dancing Script', cursive;
+    font-weight: 500;
 }
