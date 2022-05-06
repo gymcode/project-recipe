@@ -20,7 +20,7 @@ function MainComponent(){
                 </div>
             </div>
             <div className={"kreon-font"}>
-                <h4 className="capitalize text-xl">Top Trends ...</h4>
+                <h4 className="capitalize text-xl">Top Trends ....</h4>
             </div>
         </div>
     )
