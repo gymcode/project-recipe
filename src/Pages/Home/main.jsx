@@ -5,21 +5,31 @@ import JsonQuoteData from "../../helpers/quote.json"
 
 function MainComponent(){
 
-    const [quote, setQuote] = useState(JsonQuoteData.quote[0])
+    const [quote, setQuote] = useState(JsonQuoteData.quote[0])  
+    //prototypes
+    Array.prototype.sample = function(){
+        return this[Math.floor(Math.random()*this.length)]
+     }
+    
 
     useEffect(()=>{
         let count = 0
         setInterval(randomQuote, 100000);       
         function randomQuote(){
             const data = JsonQuoteData.quote
-            const length = data.length - 1
-            count++
-            if (count >= length) {
-                count = 0
-                setQuote(data[count])
-            }else{
-                setQuote(data[count])
-            }
+            // ---------------- initial code for getting different data --------------//
+            // const length = data.length - 1
+            // count++
+            // if (count >= length) {
+            //     count = 0
+            //     setQuote(data[count])
+            // }else{
+            //     setQuote(data[count])
+            // }
+
+            // ----------------- factored code to just get the objects at random -------//
+            const randomData = data.sample()
+            setQuote(randomData)
         }
     },[quote])
 
