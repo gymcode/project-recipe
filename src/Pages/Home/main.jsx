@@ -1,8 +1,28 @@
-import BackgroundImage from "../../Assets/Images/background-img.png"
+import {useEffect, useState} from 'react'
 import logo from "../../Assets/Images/logo.svg"
 import "./main.css"
+import JsonQuoteData from "../../helpers/quote.json"
 
 function MainComponent(){
+
+    const [quote, setQuote] = useState(JsonQuoteData.quote[0])
+
+    useEffect(()=>{
+        let count = 0
+        setInterval(randomQuote, 100000);       
+        function randomQuote(){
+            const data = JsonQuoteData.quote
+            const length = data.length - 1
+            count++
+            if (count >= length) {
+                count = 0
+                setQuote(data[count])
+            }else{
+                setQuote(data[count])
+            }
+        }
+    },[quote])
+
     return (
         <div className={"main-container grid grid-rows-2 grid-flow-col p-16"}>
             {/* responsiveness  */}
@@ -10,8 +30,8 @@ function MainComponent(){
                 <div>
                     <h3 className={"kreon-font capitalize text-8xl py-4 text-gray-900"}>Simple and <br />tasty recipe</h3>
                     <div className={"py-6 w-2/4 px-5"}>
-                        <p className={"dancing-script text-xl pb-3"}><q>Food can be very transformational, and it can be more than just about a dish. That’s what happened to me when I first went to France. I fell in love. And if you fall in love, well, then everything is easy.</q></p>
-                        <p className="pacifico text-xl">~Alice Waters</p>
+                        <p className={"dancing-script text-xl pb-3"}><q>{quote.content}</q></p>
+                        <p className="pacifico text-xl">~{quote.author}</p>
                     </div>
                 </div>
                 <div>
