@@ -7,7 +7,7 @@ import {RANDOM_RECIPES} from "../../services/endpoints"
 
 function MainComponent(){
 
-    const [quote, setQuote] = useState(JsonQuoteData.quote[0])  
+    const [quote, setQuote] = useState(JsonQuoteData.quote[0])
     //prototypes
     Array.prototype.sample = function(){
         return this[Math.floor(Math.random()*this.length)]
