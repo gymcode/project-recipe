@@ -1,6 +1,9 @@
-const Endpoints = {
-    SEARCH: "https://api.spoonacular.com/recipes/complexSearch?number=${Number}&query=${query}",
-    RANDOM_RECIPES: "https://api.spoonacular.com/recipes/random?number=3"
-}
+import config from "../../config/config"
 
-export default Endpoints
+const SEARCH = "https://api.spoonacular.com/recipes/complexSearch?number=${Number}&query=${query}"
+const RANDOM_RECIPES =  `https://api.spoonacular.com/recipes/random?number=3?apiKey=${config.api.key}`
+
+export {
+    SEARCH,
+    RANDOM_RECIPES
+}

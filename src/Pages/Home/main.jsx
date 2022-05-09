@@ -2,7 +2,7 @@ import {useEffect, useState} from 'react'
 import logo from "../../Assets/Images/logo.svg"
 import "./main.css"
 import JsonQuoteData from "../../helpers/quote.json"
-import
+import {RANDOM_RECIPES} from "../../services/endpoints"
 
 
 function MainComponent(){
@@ -12,7 +12,13 @@ function MainComponent(){
     Array.prototype.sample = function(){
         return this[Math.floor(Math.random()*this.length)]
      }
-    
+
+    async function GetRandomRecipes(){
+        console.log(RANDOM_RECIPES)
+        const response = await fetch(RANDOM_RECIPES)
+        const data = await response.json()
+        console.log(data)
+    }
 
     useEffect(()=>{
         let count = 0
@@ -36,7 +42,7 @@ function MainComponent(){
     },[quote])
 
     useEffect(()=>{
-        fetch
+        GetRandomRecipes()
     }, [])
 
     return (
