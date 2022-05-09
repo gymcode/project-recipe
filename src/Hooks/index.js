@@ -1,3 +1,3 @@
-import CustomHooks from "./customHooks"
+import useFetch from "./useFetch"
 
-export{CustomHooks}
+export{useFetch}

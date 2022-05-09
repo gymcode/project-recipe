@@ -3,47 +3,27 @@ import logo from "../../Assets/Images/logo.svg"
 import "./main.css"
 import JsonQuoteData from "../../helpers/quote.json"
 import {RANDOM_RECIPES} from "../../services/endpoints"
-
+import {useFetch} from "../../Hooks"
 
 function MainComponent(){
 
     const [quote, setQuote] = useState(JsonQuoteData.quote[0])
+    const dataResponse = useFetch(RANDOM_RECIPES, {isLoading: true, data: null})
+    console.log(dataResponse)
     //prototypes
     Array.prototype.sample = function(){
         return this[Math.floor(Math.random()*this.length)]
      }
 
-    async function GetRandomRecipes(){
-        console.log(RANDOM_RECIPES)
-        const response = await fetch(RANDOM_RECIPES)
-        const data = await response.json()
-        console.log(data)
-    }
-
     useEffect(()=>{
-        let count = 0
         setInterval(randomQuote, 100000);       
         function randomQuote(){
             const data = JsonQuoteData.quote
-            // ---------------- initial code for getting different data --------------//
-            // const length = data.length - 1
-            // count++
-            // if (count >= length) {
-            //     count = 0
-            //     setQuote(data[count])
-            // }else{
-            //     setQuote(data[count])
-            // }
-
             // ----------------- factored code to just get the objects at random -------//
             const randomData = data.sample()
             setQuote(randomData)
         }
     },[quote])
-
-    useEffect(()=>{
-        GetRandomRecipes()
-    }, [])
 
     return (
         <div className={"main-container grid grid-rows-2 grid-flow-col p-16"}>
