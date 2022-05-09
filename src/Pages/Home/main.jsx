@@ -2,6 +2,8 @@ import {useEffect, useState} from 'react'
 import logo from "../../Assets/Images/logo.svg"
 import "./main.css"
 import JsonQuoteData from "../../helpers/quote.json"
+import
+
 
 function MainComponent(){
 
@@ -32,6 +34,10 @@ function MainComponent(){
             setQuote(randomData)
         }
     },[quote])
+
+    useEffect(()=>{
+        fetch
+    }, [])
 
     return (
         <div className={"main-container grid grid-rows-2 grid-flow-col p-16"}>
