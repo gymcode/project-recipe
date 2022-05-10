@@ -4,6 +4,7 @@ import "./main.css"
 import JsonQuoteData from "../../helpers/quote.json"
 import {RANDOM_RECIPES} from "../../services/endpoints"
 import {useFetch} from "../../Hooks"
+import Card from "../../Components/card"
 
 function MainComponent(){
 
@@ -43,6 +44,13 @@ function MainComponent(){
             </div>
             <div className={"kreon-font"}>
                 <h4 className="capitalize text-xl">Top Trends ....</h4>
+                <div className={"grid grid-cols-5 gap-4"}>
+                    <div className={"col-span-4 py-6 px-5"}>
+                        <Card/>
+                    </div>
+                    {/* arrow navigation for next page */}
+                    <div className={""}>Help me</div>
+                </div>
             </div>
         </div>
     )
