@@ -6,6 +6,8 @@ import SampleData from "../../helpers/sampleData.json"
 import {RANDOM_RECIPES} from "../../services/endpoints"
 import {useFetch} from "../../Hooks"
 import Card from "../../Components/card"
+import Lottie from "react-lottie"
+import * as animationData from "../../Assets/lottie/lf30_editor_chrsdjer.json"
 
 function MainComponent(){
 
@@ -27,12 +29,17 @@ function MainComponent(){
         }
     },[quote])
 
+    const defaultOptions = {
+        loop: true,
+        autoplay: true, 
+        animationData: animationData,
+    }
     return (
-        <div className={"main-container grid grid-rows-2 grid-flow-col p-16"}>
+        <div className={"main-container grid grid-rows-2 grid-flow-col p-20"}>
             {/* responsiveness  */}
             <div className={"flex flex-row justify-between"}>
                 <div>
-                    <h3 className={"kreon-font capitalize text-8xl py-4 text-gray-900"}>Simple and <br />tasty recipe</h3>
+                    <h3 className={"kreon-font capitalize text-8xl text-gray-900"}>Simple and <br />tasty recipe</h3>
                     <div className={"py-5 w-2/4 px-5"}>
                         <p className={"dancing-script text-xl pb-3"}><q>{quote.content}</q></p>
                         <p className="pacifico text-xl">~{quote.author}</p>
@@ -45,9 +52,9 @@ function MainComponent(){
             </div>
             <div className={"kreon-font -mt-8"}>
                 <h4 className="capitalize text-xl">Top Trends ....</h4>
-                <div className={"grid grid-cols-5 gap-8 py-6 px-5 h-full"}>
+                <div className={"grid grid-cols-6 gap-8 py-6 px-5 h-full flex justify-center"}>
                     {/* random recipes iterations  */}
-                    <div className={"col-span-4 grid grid-cols-3"}>
+                    <div className={"col-span-5 grid grid-cols-3"}>
                         {SampleData.data.map((data)=>{
                             return (
                                 <Card/>
@@ -55,7 +62,11 @@ function MainComponent(){
                         })}
                     </div>
                     {/* arrow navigation for next page */}
-                    <div className={""}>Help me</div>
+                    <div className={""}>
+                        <Lottie                    
+                            options={defaultOptions}
+                        />
+                    </div>
                 </div>
             </div>
         </div>

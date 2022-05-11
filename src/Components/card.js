@@ -2,11 +2,11 @@ import "./component.css"
 
 function Card(){
     return (
-        <div className={"card-style w-96 mt-24 rounded-2xl relative shadow-md"} style={{height: "85%"}}>
-            <div className={"absolute left-24 -top-24 bg-yellow-400 h-48 w-48 rounded-full"}>
-                k
+        <div className={"card-style mt-24 rounded-2xl relative shadow-md"} style={{height: "82%", width: "78%"}}>
+            <div className={"absolute left-24 -top-24 bg-yellow-400 h-44 w-44 rounded-full"}>
+                
             </div>
-            <div className={""}>
+            <div className={"grid"}>
 
             </div>
         </div>
