@@ -62,7 +62,7 @@ function MainComponent(){
                         })}
                     </div>
                     {/* arrow navigation for next page */}
-                    <div className={""}>
+                    <div className={"lottie"}>
                         <Lottie                    
                             options={defaultOptions}
                         />

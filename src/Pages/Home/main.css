@@ -26,3 +26,10 @@
     font-family: 'Dancing Script', cursive;
     font-weight: 500;
 }
+
+.lottie{
+    width: 25rem;
+    height: 26rem;
+    transform: translate3d(-40px, 10px, 0px);
+    content-visibility: visible;
+}
