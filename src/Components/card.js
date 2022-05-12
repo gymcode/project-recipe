@@ -15,7 +15,14 @@ function Card(){
                             <p>60 calories</p>
                         </div>
                     </div>                
-                    <div className="border-t border-gray-300">
+                    <div className="border-t border-gray-300 flex justify-between items-center">
+                        <div>
+                            <div>one</div>
+                            <div>two</div>
+                        </div>
+                        <div>
+                            button
+                        </div>
                     </div>                
             </div>
         </div>
