@@ -2,7 +2,7 @@ import "./component.css"
 
 function Card(){
     return (
-        <div className={"card-style mt-24 rounded-2xl relative shadow-md"} style={{height: "82%", width: "78%"}}>
+        <div className={"card-style mt-24 rounded-2xl relative shadow-md"} style={{height: "78%", width: "78%"}}>
             <div className={"absolute left-24 -top-24 bg-green-400 h-44 w-44 rounded-full"}>
                 
             </div>
@@ -15,13 +15,15 @@ function Card(){
                             <p>60 calories</p>
                         </div>
                     </div>                
-                    <div className="border-t border-gray-300 flex justify-between items-center">
+                    <div className="border-t border-gray-300 pt-2 flex justify-between items-center">
                         <div>
-                            <div>one</div>
+                            <div>vegan</div>
                             <div>two</div>
                         </div>
                         <div>
-                            button
+                            <div className="h-10 w-32 flex justify-center items-center rounded-tl-lg rounded-br-lg" style={{background: "#F96107"}}>
+                                view
+                            </div>
                         </div>
                     </div>                
             </div>
