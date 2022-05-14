@@ -12,7 +12,7 @@ import * as animationData from "../../Assets/lottie/lf30_editor_chrsdjer.json"
 function MainComponent(){
 
     const [quote, setQuote] = useState(JsonQuoteData.quote[0])
-    const dataResponse = useFetch(RANDOM_RECIPES, {isLoading: true, data: null})
+    const dataResponse = useFetch(RANDOM_RECIPES, {isLoading: true, data: null}, "recipe")
     console.log(dataResponse)
     //prototypes
     Array.prototype.sample = function(){
@@ -20,13 +20,14 @@ function MainComponent(){
      }
 
     useEffect(()=>{
-        setInterval(randomQuote, 100000);       
+        setInterval(randomQuote, 36000000);       
         function randomQuote(){
             const data = JsonQuoteData.quote
             // ----------------- factored code to just get the objects at random -------//
             const randomData = data.sample()
             setQuote(randomData)
         }
+
     },[quote])
 
     const defaultOptions = {
