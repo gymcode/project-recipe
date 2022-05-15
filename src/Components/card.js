@@ -1,7 +1,8 @@
 import "./component.css"
-import {ReactComponent as Checker} from "../Assets/Images/checkmark-circle-outline.svg"
+import {ReactComponent as Checker} from "../Assets/Icons/checkmark-circle-outline.svg"
+import {ReactComponent as Cross} from "../Assets/Icons/close-outline.svg"
 
-function Card({modal, title, calories, image, score}){
+function Card({modal, title, image, score, vegan, gluten}){
     return (
         <div className={"card-style mt-24 rounded-2xl relative shadow-md"} style={{height: "78%", width: "78%"}}>
             <div className={"absolute left-24 -top-24 h-44 w-44 rounded-full shadow-2xl"} >
@@ -23,13 +24,29 @@ function Card({modal, title, calories, image, score}){
                             <div className="flex">
                                 Vegan
                                 <div>
-                                    <Checker height={"0.8rem"} color="yellow"/>
+                                    {vegan ? 
+                                        <>
+                                            <Checker height={"0.8rem"} stroke="green"/>
+                                        </>
+                                        :
+                                        <>
+                                            <Cross height={"0.8rem"} stroke="red"/>
+                                        </>
+                                    }
                                 </div>
                             </div>
                             <div className="flex">
                                 Gluten
                                 <div>
-                                    <Checker height={"0.8rem"}/>
+                                    {gluten ? 
+                                        <>
+                                            <Checker height={"0.8rem"} stroke="green"/>
+                                        </>
+                                        :
+                                        <>
+                                            <Cross height={"0.8rem"} stroke="red"/>
+                                        </>
+                                    }
                                 </div>
                             </div>
                         </div>
