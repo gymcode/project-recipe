@@ -2,7 +2,7 @@ import {useEffect, useState} from 'react'
 
 function useFetch(url, defaultResponse, recipeString){
     const [data, setData] = useState(defaultResponse)
-    console.log("data here" + data)
+    console.log("data here" + data.Error)
     useEffect(()=>{
         // checking if there's data in local storage
         const localStorageCheck = localStorage.getItem(recipeString)

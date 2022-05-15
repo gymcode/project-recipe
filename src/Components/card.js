@@ -13,38 +13,38 @@ function Card({modal, title, image, score, vegan, gluten}){
             <div className={"grid grid-rows-5 p-6 h-full"}>
                     <div className="row-span-4 mt-20 grid grid-rows-3">
                         <div className="flex justify-center items-center row-span-2">
-                            <h2 className="text-2xl capitalize text-center">{title}</h2>
+                            <h2 className="text-2xl capitalize text-center text-white">{title}</h2>
                         </div>
-                        <div className="text-gray-600 text-lg flex justify-center">
+                        <div className="text-gray-400 text-lg flex justify-center">
                             <p> Health Score : {score}</p>
                         </div>
                     </div>                
                     <div className="border-t border-gray-300 pt-2 flex justify-between items-center">
                         <div>
-                            <div className="flex">
+                            <div className="flex text-white">
                                 Vegan
                                 <div>
                                     {vegan ? 
                                         <>
-                                            <Checker height={"0.8rem"} stroke="green"/>
+                                            <Checker height={"0.8rem"} stroke="#F96107"/>
                                         </>
                                         :
                                         <>
-                                            <Cross height={"0.8rem"} stroke="red"/>
+                                            <Cross height={"0.8rem"} stroke="black"/>
                                         </>
                                     }
                                 </div>
                             </div>
-                            <div className="flex">
+                            <div className="flex text-white">
                                 Gluten
                                 <div>
                                     {gluten ? 
                                         <>
-                                            <Checker height={"0.8rem"} stroke="green"/>
+                                            <Checker height={"0.8rem"} stroke="#F96107"/>
                                         </>
                                         :
                                         <>
-                                            <Cross height={"0.8rem"} stroke="red"/>
+                                            <Cross height={"0.8rem"} stroke="black"/>
                                         </>
                                     }
                                 </div>
