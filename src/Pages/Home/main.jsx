@@ -56,9 +56,13 @@ function MainComponent(){
                 <div className={"grid grid-cols-6 gap-8 py-6 px-5 h-full flex justify-center"}>
                     {/* random recipes iterations  */}
                     <div className={"col-span-5 grid grid-cols-3"}>
-                        {SampleData.data.map((data)=>{
+                        {dataResponse.data.recipes.map((data)=>{
                             return (
-                                <Card/>
+                                <Card
+                                    title={data.title}
+                                    image={data.image}
+                                    score={data.healthScore}
+                                />
                             )
                         })}
                     </div>
