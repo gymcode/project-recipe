@@ -1,0 +1,21 @@
+.healthy-container {
+    background-image: url("../../Assets/Images/Frame3.png");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+}
+
+
+.kreon-font{
+    font-family: 'Kreon', serif;
+}
+
+.healthy-lottie{
+    width: 5rem;
+    height: 5rem;
+    transform: translate3d(57rem, 50px, 0px);
+    content-visibility: visible;
+}

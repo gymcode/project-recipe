@@ -9,6 +9,7 @@ import {useFetch} from "../../Hooks"
 import Card from "../../Components/card"
 import Lottie from "react-lottie"
 import * as animationData from "../../Assets/lottie/lf30_editor_chrsdjer.json"
+import * as loadingData from "../../Assets/lottie/lf30_editor_xad43im4.json"
 
 function MainComponent(){
 
@@ -36,6 +37,12 @@ function MainComponent(){
         autoplay: true, 
         animationData: animationData,
     }
+
+    const defaultLoadingOptions = {
+        loop: true,
+        autoplay: true, 
+        animationData: loadingData,
+    }
     return (
         <div className={"main-container grid grid-rows-2 grid-flow-col p-20"}>
             {/* responsiveness  */}
@@ -57,17 +64,26 @@ function MainComponent(){
                 <div className={"grid grid-cols-6 gap-8 py-6 px-5 h-full flex justify-center"}>
                     {/* random recipes iterations  */}
                     <div className={"col-span-5 grid grid-cols-3"}>
-                        {dataResponse.data.recipes.map((data)=>{
-                            return (
-                                <Card
-                                    title={data.title}
-                                    image={data.image}
-                                    score={data.healthScore}
-                                    vegan={data.vegan}
-                                    gluten={data.glutenFree}
-                                />
-                            )
-                        })}
+                        {
+                            dataResponse.isLoading ? 
+                            <>
+                               <Lottie
+                                    options={defaultLoadingOptions}
+                               /> 
+                            </>
+                            :
+                            dataResponse.data.recipes.map((data)=>{
+                                return (
+                                    <Card
+                                        title={data.title}
+                                        image={data.image}
+                                        score={data.healthScore}
+                                        vegan={data.vegan}
+                                        gluten={data.glutenFree}
+                                    />
+                                )
+                            })
+                        }
                     </div>
                     {/* arrow navigation for next page */}
                     <Link to="/healthy">
