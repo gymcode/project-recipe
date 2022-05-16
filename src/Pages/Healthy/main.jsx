@@ -1,37 +1,57 @@
-import "./main.css"
-import * as nextPageLoader from "../../Assets/lottie/lf30_editor_cialu9mk.json"
-import Lottie from "react-lottie"
-
-
+import { useState, useEffect } from "react";
+import "./main.css";
+import * as nextPageLoader from "../../Assets/lottie/lf30_editor_cialu9mk.json";
+import Lottie from "react-lottie";
+import { SEARCH } from "../../services/endpoints";
+import { useFetch } from "../../Hooks";
 
 const defaultOptions = {
-    loop: true,
-    autoplay: true, 
-    animationData: nextPageLoader,
-}
+  loop: true,
+  autoplay: true,
+  animationData: nextPageLoader,
+};
 
-
-function MainComponent(){
-    return (
-        <div className="healthy-container grid grid-rows-7">
-            <div className="row-span-6 grid grid-cols-2 gap-4">
-                <div className="p-40 mt-20 kreon-font text-white">
-                    <h2 className="w-full my-4 text-6xl capitalize">Changing your eating habits ?</h2>
-                    <p>Always take care of your health starting from the food menu that you consume everyday</p>
-                </div>
-                <div className="p-36 flex justify-center items-center">
-                    <div className="bg-white h-full rounded-2xl shadow-2xl" style={{width: "75%"}}>
-
-                    </div>
-                </div>
-            </div>
-            <div className="healthy-lottie flex justify-center">
-                <Lottie
-                    options={defaultOptions}
-                />
-            </div>
+function MainComponent() {
+  const [data, setData] = useState();
+  const searchEndpoint = `${SEARCH}&diet=vegetarian&number=1`;
+  const dataObject = useFetch(
+    searchEndpoint,
+    { isLoading: true, data: null },
+    "vegi_search"
+  );
+  console.log(dataObject.data.results[0]);
+  return (
+    <div className="healthy-container grid grid-rows-7">
+      <div className="row-span-6 grid grid-cols-2">
+        <div className="p-36 mt-16 kreon-font text-white">
+          <h2 className="w-full my-5 text-6xl capitalize">
+            Changing your eating habits ?
+          </h2>
+          <p>
+            Always take care of your health starting from the food menu that you
+            consume everyday
+          </p>
+          <div className="flex justify-center items-center ml-3 mt-10 w-1/2 p-5 text-white hover:text-black shadow-2xl hover:bg-red-600 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 cursor-pointer">
+            Explore more content..
+          </div>
         </div>
-    )
+        <div className="p-36 flex justify-center items-center">
+          <div
+            className="bg-white h-full rounded-2xl shadow-2xl grid grid-rows-2"
+            style={{ width: "75%" }}
+          >
+            <div className="h-full w-full bg-red-500">
+                {/* <img src={dataObject.data.results[0].image} className={"max-h-full max-w-full"} alt="" /> */}
+            </div>
+            <div>hi good night</div>
+          </div>
+        </div>
+      </div>
+      <div className="healthy-lottie flex justify-center">
+        <Lottie options={defaultOptions} />
+      </div>
+    </div>
+  );
 }
 
-export default MainComponent
+export default MainComponent;
