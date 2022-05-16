@@ -4,11 +4,18 @@ import * as nextPageLoader from "../../Assets/lottie/lf30_editor_cialu9mk.json";
 import Lottie from "react-lottie";
 import { SEARCH } from "../../services/endpoints";
 import { useFetch } from "../../Hooks";
+import * as loadingData from "../../Assets/lottie/lf30_editor_xad43im4.json";
 
 const defaultOptions = {
   loop: true,
   autoplay: true,
   animationData: nextPageLoader,
+};
+
+const defaultLoadingOptions = {
+  loop: true,
+  autoplay: true,
+  animationData: loadingData,
 };
 
 function MainComponent() {
@@ -19,7 +26,7 @@ function MainComponent() {
     { isLoading: true, data: null },
     "vegi_search"
   );
-  console.log(dataObject.data.results[0]);
+  //   console.log(dataObject.data.results[0]);
   return (
     <div className="healthy-container grid grid-rows-7">
       <div className="row-span-6 grid grid-cols-2">
@@ -35,17 +42,23 @@ function MainComponent() {
             Explore more content..
           </div>
         </div>
-        <div className="p-36 flex justify-center items-center">
-          <div
-            className="bg-white h-full rounded-2xl shadow-2xl grid grid-rows-2"
-            style={{ width: "75%" }}
-          >
-            <div className="h-full w-full bg-red-500">
-                {/* <img src={dataObject.data.results[0].image} className={"max-h-full max-w-full"} alt="" /> */}
+        {dataObject.isLoading ? (
+          <>
+            <Lottie options={defaultLoadingOptions} />
+          </>
+        ) : (
+          <div className="p-36 flex justify-center items-center">
+            <div
+              className="bg-white h-full rounded-2xl shadow-2xl grid grid-rows-2"
+              style={{ width: "75%" }}
+            >
+              <div className="w-full h-full bg-red-400">
+                {/* <img src={dataObject.data.results[0].image} alt="" /> */}
+              </div>
+              <div>hi good night</div>
             </div>
-            <div>hi good night</div>
           </div>
-        </div>
+        )}
       </div>
       <div className="healthy-lottie flex justify-center">
         <Lottie options={defaultOptions} />
