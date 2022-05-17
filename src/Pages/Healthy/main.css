@@ -19,3 +19,9 @@
     transform: translate3d(57rem, 30px, 0px);
     content-visibility: visible;
 }
+
+.healthy-card-image {
+    background-image: url("../../Assets/Images/card2.png");
+    background-size: cover;
+    background-position: center;
+}

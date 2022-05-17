@@ -47,14 +47,15 @@ function MainComponent() {
             <Lottie options={defaultLoadingOptions} />
           </>
         ) : (
-          <div className="p-36 flex justify-center items-center">
+          <div
+            className="flex justify-center items-center mt-44 ml-32"
+            style={{ width: "62%", height: "68%" }}
+          >
             <div
-              className="bg-white h-full rounded-2xl shadow-2xl grid grid-rows-2"
+              className="bg-white h-full rounded-lg shadow-2xl grid grid-rows-2"
               style={{ width: "75%" }}
             >
-              <div className="w-full h-full bg-red-400">
-                {/* <img src={dataObject.data.results[0].image} alt="" /> */}
-              </div>
+              <div className="healthy-card-image"/>
               <div>hi good night</div>
             </div>
           </div>
