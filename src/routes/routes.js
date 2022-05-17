@@ -1,5 +1,5 @@
 // component imports
-import {MainComponent, HealthyComponent} from "../Pages"
+import {MainComponent, HealthyComponent, CategoryComponent} from "../Pages"
 
 let PageComponents = [
     { name: "Home", 
@@ -9,6 +9,10 @@ let PageComponents = [
     { name: "Healthy", 
       path: "/healthy", 
       element: <HealthyComponent/>
+    }, 
+    { name: "Category", 
+      path: "/category", 
+      element: <CategoryComponent/>
     }, 
 ]
 

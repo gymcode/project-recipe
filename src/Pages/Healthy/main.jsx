@@ -5,6 +5,7 @@ import Lottie from "react-lottie";
 import { SEARCH } from "../../services/endpoints";
 import { useFetch } from "../../Hooks";
 import * as loadingData from "../../Assets/lottie/lf30_editor_xad43im4.json";
+import { Link } from "react-router-dom";
 
 const defaultOptions = {
   loop: true,
@@ -19,13 +20,13 @@ const defaultLoadingOptions = {
 };
 
 function MainComponent() {
-  const [data, setData] = useState();
   const searchEndpoint = `${SEARCH}&diet=vegetarian&number=1`;
   const dataObject = useFetch(
     searchEndpoint,
     { isLoading: true, data: null },
     "vegi_search"
   );
+  //   const data = dataObject.data.results[0]
   //   console.log(dataObject.data.results[0]);
   return (
     <div className="healthy-container grid grid-rows-7">
@@ -38,9 +39,11 @@ function MainComponent() {
             Always take care of your health starting from the food menu that you
             consume everyday
           </p>
-          <div className="flex justify-center items-center ml-3 mt-10 w-1/2 p-5 text-white hover:text-black shadow-2xl hover:bg-red-600 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 cursor-pointer">
-            Explore more content..
-          </div>
+          <Link to={"/category"}>
+            <div className="flex justify-center items-center ml-3 mt-10 w-1/2 p-5 text-white hover:text-black shadow-2xl hover:bg-red-600 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 cursor-pointer">
+                Explore more content..
+            </div>
+          </Link>
         </div>
         {dataObject.isLoading ? (
           <>
@@ -55,8 +58,38 @@ function MainComponent() {
               className="bg-white h-full rounded-lg shadow-2xl grid grid-rows-2"
               style={{ width: "75%" }}
             >
-              <div className="healthy-card-image"/>
-              <div>hi good night</div>
+              <div className="healthy-card-image" />
+              <div className="p-6">
+                <div className="flex justify-between items-center">
+                  <div>
+                    <img
+                      src={dataObject.data.results[0].image}
+                      className={"h-20 w-28 rounded-full"}
+                      alt=""
+                    />
+                  </div>
+                  <p className="kreon-font text-xl ml-5">
+                    {dataObject.data.results[0].title}
+                  </p>
+                </div>
+                <div className="flex justify-between p-5 kreon-font ">
+                  <div>
+                    <p>Calories</p>
+                    <p className="text-red-700">230</p>
+                  </div>
+                  <div>
+                    <p>Protein</p>
+                    <p className="text-green-700">12g</p>
+                  </div>
+                  <div>
+                    <p>Fat</p>
+                    <p className="text-red-700">34g</p>
+                  </div>
+                </div>
+                <div className="border-b mt-7">
+
+                </div>
+              </div>
             </div>
           </div>
         )}

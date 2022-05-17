@@ -1,0 +1,27 @@
+.category-container {
+    background-image: url("../../Assets/Images/Frame4.png");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+}
+
+
+.kreon-font{
+    font-family: 'Kreon', serif;
+}
+
+.healthy-lottie{
+    width: 5rem;
+    height: 5rem;
+    transform: translate3d(57rem, 30px, 0px);
+    content-visibility: visible;
+}
+
+.healthy-card-image {
+    background-image: url("../../Assets/Images/card2.png");
+    background-size: cover;
+    background-position: center;
+}
