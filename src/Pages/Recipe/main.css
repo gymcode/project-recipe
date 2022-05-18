@@ -1,4 +1,4 @@
-.category-container {
+.recipe-container {
     background-image: url("../../Assets/Images/Frame5.png");
     background-size: cover;
     background-position: center;
@@ -7,6 +7,7 @@
     width: 100vw;
     height: 100vh;
 }
+
 
 
 .kreon-font{
