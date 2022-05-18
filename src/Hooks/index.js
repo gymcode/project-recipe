@@ -1,3 +1,4 @@
 import useFetch from "./useFetch"
+import useFetchNoStorage from "./useFetchNoStorage"
 
-export{useFetch}
+export{useFetch, useFetchNoStorage}

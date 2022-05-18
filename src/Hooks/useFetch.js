@@ -2,13 +2,11 @@ import {useEffect, useState} from 'react'
 
 function useFetch(url, defaultResponse, recipeString){
     const [data, setData] = useState(defaultResponse)
-    console.log("data here" + data.Error)
-    console.log(`killin me softly ${JSON.parse(localStorage.getItem(recipeString))}`)
+    // console.log("data here" + data.Error)
+    // console.log(`killin me softly ${JSON.parse(localStorage.getItem(recipeString))}`)
     useEffect(()=>{
         // checking if there's data in local storage
-        console.log(`killin me softly`)
         const localStorageCheck = localStorage.getItem(recipeString)    
-        console.log(`killin me softly ${localStorageCheck}`)
         if (JSON.parse(localStorageCheck)) {
             setData({isLoading: false, data: JSON.parse(localStorageCheck)})
         }else {
