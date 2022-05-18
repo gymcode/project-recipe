@@ -3,8 +3,7 @@ import logo from "../../Assets/Images/logo.svg"
 import "./main.css"
 import {Link} from "react-router-dom"
 import JsonQuoteData from "../../helpers/quote.json"
-import SampleData from "../../helpers/sampleData.json"
-import {RANDOM_RECIPES} from "../../services/endpoints"
+import {Endpoints} from "../../services/endpoints"
 import {useFetch} from "../../Hooks"
 import Card from "../../Components/card"
 import Lottie from "react-lottie"
@@ -14,7 +13,7 @@ import * as loadingData from "../../Assets/lottie/lf30_editor_xad43im4.json"
 function MainComponent(){
 
     const [quote, setQuote] = useState(JsonQuoteData.quote[0])
-    const dataResponse = useFetch(RANDOM_RECIPES, {isLoading: true, data: null}, "recipe")
+    const dataResponse = useFetch(Endpoints.RANDOM_RECIPES, {isLoading: true, data: null}, "recipe")
     console.log(dataResponse)
     //prototypes
     Array.prototype.sample = function(){
@@ -80,6 +79,7 @@ function MainComponent(){
                                         score={data.healthScore}
                                         vegan={data.vegan}
                                         gluten={data.glutenFree}
+                                        id = {data.id}
                                     />
                                 )
                             })

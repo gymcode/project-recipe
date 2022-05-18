@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import "./main.css";
 import * as nextPageLoader from "../../Assets/lottie/lf30_editor_cialu9mk.json";
 import Lottie from "react-lottie";
-import { SEARCH } from "../../services/endpoints";
+import { Endpoints } from "../../services/endpoints";
 import { useFetch } from "../../Hooks";
 import * as loadingData from "../../Assets/lottie/lf30_editor_xad43im4.json";
 import { Link } from "react-router-dom";
@@ -20,7 +20,7 @@ const defaultLoadingOptions = {
 };
 
 function MainComponent() {
-  const searchEndpoint = `${SEARCH}&diet=vegetarian&number=1`;
+  const searchEndpoint = `${Endpoints.SEARCH}&diet=vegetarian&number=1`;
   const dataObject = useFetch(
     searchEndpoint,
     { isLoading: true, data: null },

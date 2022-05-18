@@ -67,7 +67,7 @@ function Card({ id, title, image, score, vegan, gluten }) {
           <div>
             <Link to={`/recipe/${id}`}>
               <div
-                className="h-10 w-32 flex justify-center items-center rounded-tl-lg rounded-br-lg"
+                className="h-10 w-32 flex justify-center items-center rounded-tl-lg rounded-br-lg cursor-pointer"
                 style={{ background: "#F96107" }}
               >
                 view
