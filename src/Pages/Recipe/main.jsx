@@ -9,7 +9,7 @@ function MainComponent() {
   const dataObject = useFetch(Endpoints.RECIPE_INFO(id), {isLoading: false, data: null}, "recipe_information")
   console.log(dataObject)
   return (
-    <div className="category-container grid grid-rows-7">
+    <div className="recipe-container grid grid-rows-7">
       
     </div>
   );
