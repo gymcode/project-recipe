@@ -17,6 +17,13 @@ function MainComponent() {
     "recipe_information"
   );
   console.log(dataObject);
+  
+  useEffect(() => {
+    const newDish = dataObject.data.dishTypes.map((data) => {
+      return { name: data };
+    });
+    console.log(newDish);
+  });
 
   return (
     <div className="recipe-container grid grid-cols-2">
@@ -62,12 +69,34 @@ function MainComponent() {
                 <div className="kreon-font">Important notes</div>
               </div>
               <div>
-                <div className="kreon-font h-10 w-full flex justify-center items-center shadow-md" style={{ background: "#F96107" }}>Recipe summary</div>
+                <div>Dish Types</div>
+                <div className="flex flex-wrap">
+                  <div clas>{dataObject.data.dishTypes}</div>
+                </div>
+              </div>
+              <div className="flex flex-wrap">
+                {/* <div>readyInMinutes</div>
+                  <div>servings</div>
+                  <div>readyInMinutes</div>
+                  <div>readyInMinutes</div>
+                  <div>readyInMinutes</div> */}
+              </div>
+              <div>
+                <div
+                  className="kreon-font h-10 w-full flex justify-center items-center shadow-md"
+                  style={{ background: "#F96107" }}
+                >
+                  Recipe summary
+                </div>
               </div>
             </div>
             <div>
               <h2 className="kreon-font py-2">Instructions</h2>
-              <div dangerouslySetInnerHTML={{__html: dataObject.data.instructions}}/>
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: dataObject.data.instructions,
+                }}
+              />
             </div>
           </div>
         </>
