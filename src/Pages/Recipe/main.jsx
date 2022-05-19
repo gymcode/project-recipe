@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import "./main.css";
+import "../../Components/component.css";
 import logo from "../../Assets/Images/logo.svg";
 import { useParams } from "react-router-dom";
 import { Endpoints } from "../../services/endpoints";
@@ -39,11 +40,8 @@ function MainComponent() {
               <div className="flex flex-wrap">
                 {dataObject.data.extendedIngredients.map((data) => (
                   <>
-                    <div className="px-5 py-5">
-                      <div
-                        className="kreon-font h-12 w-32 flex items-center justify-center rounded-tl-xl rounded-br-xl cursor-pointer transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 shadow-xl duration-300"
-                        style={{ background: "#F83f05" }}
-                      >
+                    <div className="px-4 py-5">
+                      <div className="card-style kreon-font h-12 w-32 flex items-center text-white hover:text-black hover:bg-orange-600 justify-center rounded-tl-xl rounded-br-xl cursor-pointer transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 shadow-xl duration-300">
                         {data.name}
                       </div>
                     </div>
@@ -60,8 +58,17 @@ function MainComponent() {
               <div className="kreon-font text-4xl w-3/4">
                 {dataObject.data.title}
               </div>
+              <div className="pt-8 flex">
+                <div className="kreon-font">Important notes</div>
+              </div>
+              <div>
+                <div className="kreon-font h-10 w-full flex justify-center items-center shadow-md" style={{ background: "#F96107" }}>Recipe summary</div>
+              </div>
             </div>
-            <div>das</div>
+            <div>
+              <h2 className="kreon-font py-2">Instructions</h2>
+              <div dangerouslySetInnerHTML={{__html: dataObject.data.instructions}}/>
+            </div>
           </div>
         </>
       ) : (
