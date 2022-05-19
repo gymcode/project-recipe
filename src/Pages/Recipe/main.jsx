@@ -7,6 +7,7 @@ import { Endpoints } from "../../services/endpoints";
 import { useFetch, useFetchNoStorage } from "../../Hooks";
 
 function MainComponent() {
+  const [dish, setDish] = useState([]);
   const { id } = useParams();
   const dataObject = useFetch(
     Endpoints.RECIPE_INFO(id),
@@ -16,15 +17,14 @@ function MainComponent() {
     },
     "recipe_information"
   );
-  console.log(dataObject);
-  
-  useEffect(() => {
-    const newDish = dataObject.data.dishTypes.map((data) => {
-      return { name: data };
-    });
-    console.log(newDish);
-  });
 
+  useEffect(() => {
+      const newDish = dataObject.data.dishTypes.map((data) => {
+        return { name: data };
+      });
+      setDish(newDish);
+  }, []);
+  console.log(dish);
   return (
     <div className="recipe-container grid grid-cols-2">
       {!dataObject.isLoading ? (
@@ -41,14 +41,14 @@ function MainComponent() {
               }}
             />
             <div className="p-8 pl-16">
-              <h3 className="kreon-font text-xl text-white">
+              <h3 className="kreon-font text-xl text-black">
                 Extended Ingredients
               </h3>
               <div className="flex flex-wrap">
                 {dataObject.data.extendedIngredients.map((data) => (
                   <>
                     <div className="px-4 py-5">
-                      <div className="card-style kreon-font h-12 w-32 flex items-center text-white hover:text-black hover:bg-orange-600 justify-center rounded-tl-xl rounded-br-xl cursor-pointer transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 shadow-xl duration-300">
+                      <div className="card-style kreon-font h-12 w-32 flex items-center text-black hover:text-black hover:bg-orange-600 justify-center rounded-tl-xl rounded-br-xl cursor-pointer transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 shadow-xl duration-300">
                         {data.name}
                       </div>
                     </div>
@@ -65,33 +65,32 @@ function MainComponent() {
               <div className="kreon-font text-4xl w-3/4">
                 {dataObject.data.title}
               </div>
-              <div className="pt-8 flex">
-                <div className="kreon-font">Important notes</div>
-              </div>
-              <div>
-                <div>Dish Types</div>
-                <div className="flex flex-wrap">
-                  <div clas>{dataObject.data.dishTypes}</div>
+              <div className="kreon-font py-3 pt-10">
+                <div className="mb-3">
+                  <h3 className="text-xl">Dish Types</h3>
+                  <p>This type of dish is best suitable for the following dish types</p>
                 </div>
-              </div>
-              <div className="flex flex-wrap">
-                {/* <div>readyInMinutes</div>
-                  <div>servings</div>
-                  <div>readyInMinutes</div>
-                  <div>readyInMinutes</div>
-                  <div>readyInMinutes</div> */}
+                <div className="flex flex-wrap">
+                  {dish.map((data) => (
+                    <>
+                      <div className="pr-3">
+                        <div className="card-style kreon-font h-8 w-32 flex items-center text-white justify-center rounded-tl-2xl rounded-br-2xl" style={{ background: "#000" }}>{data.name}</div>
+                      </div>
+                    </>
+                  ))}
+                </div>
               </div>
               <div>
                 <div
-                  className="kreon-font h-10 w-full flex justify-center items-center shadow-md"
-                  style={{ background: "#F96107" }}
+                  className="kreon-font lg:mt-8 h-10 w-full flex justify-center items-center shadow-lg"
+                  style={{ background: "linear-gradient(180.18deg, #4D77ED 0.16%, #F98809 0.17%, #F83F05 85.53%)" }}
                 >
                   Recipe summary
                 </div>
               </div>
             </div>
             <div>
-              <h2 className="kreon-font py-2">Instructions</h2>
+              <h2 className="kreon-font py-2 text-xl">Instructions</h2>
               <div
                 dangerouslySetInnerHTML={{
                   __html: dataObject.data.instructions,
