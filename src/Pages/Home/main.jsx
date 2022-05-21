@@ -47,7 +47,7 @@ function MainComponent(){
             {/* responsiveness  */}
             <div className={"flex flex-row justify-between"}>
                 <div>
-                    <h3 className={"kreon-font capitalize text-8xl text-white"}>Simple and <br />tasty recipe</h3>
+                    <h3 className={"kreon-font capitalize text-8xl text-white"}>Simple and <br />tasty <span style={{ color: "#F96107" }}>recipe</span></h3>
                     <div className={"py-5 w-2/4 px-5"}>
                         <p className={"dancing-script text-xl text-white pb-3"}><q>{quote.content}</q></p>
                         <p className="pacifico text-xl text-white">~{quote.author}</p>
@@ -65,11 +65,11 @@ function MainComponent(){
                     <div className={"col-span-5 grid grid-cols-3"}>
                         {
                             dataResponse.isLoading ? 
-                            <>
+                            <div>
                                <Lottie
                                     options={defaultLoadingOptions}
                                /> 
-                            </>
+                            </div>
                             :
                             dataResponse.data.recipes.map((data)=>{
                                 return (
