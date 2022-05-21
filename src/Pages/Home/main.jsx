@@ -48,7 +48,7 @@ function MainComponent(){
             <div className={"flex flex-row justify-between"}>
                 <div>
                     <h3 className={"kreon-font capitalize text-8xl text-white"}>Simple and <br />tasty <span style={{ color: "#F96107" }}>recipe</span></h3>
-                    <div className={"py-5 w-2/4 px-5"}>
+                    <div className={"py-12 w-2/4 px-5"}>
                         <p className={"dancing-script text-xl text-white pb-3"}><q>{quote.content}</q></p>
                         <p className="pacifico text-xl text-white">~{quote.author}</p>
                     </div>
@@ -58,11 +58,11 @@ function MainComponent(){
                     <img src={logo} className={"h-32 w-32"} alt="" />
                 </div>
             </div>
-            <div className={"kreon-font -mt-8"}>
+            <div className={"kreon-font"}>
                 <h4 className="capitalize text-xl text-white">Top Trends ....</h4>
-                <div className={"grid grid-cols-6 gap-8 py-6 px-5 h-full flex justify-center"}>
+                <div className={"grid grid-cols-6 gap-8 px-5 h-full flex justify-center"}>
                     {/* random recipes iterations  */}
-                    <div className={"col-span-5 grid grid-cols-3"}>
+                    <div className={"col-span-5 grid grid-cols-2"}>
                         {
                             dataResponse.isLoading ? 
                             <div>
