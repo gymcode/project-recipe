@@ -7,12 +7,10 @@ import {Endpoints} from "../../services/endpoints"
 import {useFetch,useModal} from "../../Hooks"
 import Card from "../../Components/card"
 import Lottie from "react-lottie"
-import Modal from '../../Components/modal'
 import * as animationData from "../../Assets/lottie/lf30_editor_chrsdjer.json"
 import * as loadingData from "../../Assets/lottie/lf30_editor_xad43im4.json"
 
 function MainComponent(){
-    const {toggle, visible} = useModal();
     const [quote, setQuote] = useState(JsonQuoteData.quote[0])
     const dataResponse = useFetch(Endpoints.RANDOM_RECIPES, {isLoading: true, data: null}, "recipe")
     console.log(dataResponse)
@@ -52,10 +50,7 @@ function MainComponent(){
                     <div className={"py-12 w-2/4 px-5"}>
                         <p className={"dancing-script text-xl text-white pb-3"}><q>{quote.content}</q></p>
                         <p className="pacifico text-xl text-white">~{quote.author}</p>
-                        <button onClick={toggle}>Show Modal</button>
-                        <Modal visible={visible} toggle={toggle}>
-                            kk
-                        </Modal>
+                        
                     </div>
                 </div>
                 <div>

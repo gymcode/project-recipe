@@ -4,10 +4,13 @@ import "../../Components/component.css";
 import logo from "../../Assets/Images/logo.svg";
 import { useParams } from "react-router-dom";
 import { Endpoints } from "../../services/endpoints";
-import { useFetch, useFetchNoStorage } from "../../Hooks";
+import { useFetch, useFetchNoStorage, useModal } from "../../Hooks";
+import Modal from "../../Components/modal";
 import { ReactComponent as Alert } from "../../Assets/Icons/alert-circle-outline.svg";
 
 function MainComponent() {
+  const { toggle, visible } = useModal();
+  const {summary, setSummary} = useState("")
   const [dish, setDish] = useState([]);
   const { id } = useParams();
   const dataObject = useFetchNoStorage(Endpoints.RECIPE_INFO(id), {
@@ -23,6 +26,7 @@ function MainComponent() {
       setDish(newDish);
     }, 3000);
   }, []);
+  console.log(summary)
   return (
     <div className="recipe-container grid grid-cols-2">
       {!dataObject.isLoading ? (
@@ -88,7 +92,8 @@ function MainComponent() {
               </div>
               <div>
                 <div
-                  className="kreon-font lg:mt-8 h-10 w-full flex justify-center items-center shadow-lg"
+                  onClick={toggle}
+                  className="kreon-font lg:mt-8 h-10 w-full flex justify-center items-center shadow-lg cursor-pointer"
                   style={{
                     background:
                       "linear-gradient(180.18deg, #4D77ED 0.16%, #F98809 0.17%, #F83F05 85.53%)",
@@ -115,6 +120,14 @@ function MainComponent() {
       ) : (
         <>this is loading</>
       )}
+
+      <Modal visible={visible} toggle={toggle} header={"Recipe Summary"}>
+        <div
+          className="p-3"
+        >
+          {summary}
+        </div>
+      </Modal>
     </div>
   );
 }
