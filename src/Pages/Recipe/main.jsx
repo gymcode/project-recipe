@@ -39,14 +39,14 @@ function MainComponent() {
               }}
             />
             <div className="p-5 pl-16">
-              <h3 className="kreon-font text-xl text-white">
+              <h3 className="kreon-font text-xl text-black">
                 Extended Ingredients
               </h3>
               <div className="flex flex-wrap">
                 {dataObject.data.extendedIngredients.map((data) => (
                   <>
                     <div className="px-4 py-5">
-                      <div className="card-style kreon-font h-12 w-32 flex items-center text-white hover:text-black hover:bg-orange-600 justify-center rounded-tl-xl rounded-br-xl cursor-pointer transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 shadow-xl duration-300">
+                      <div className="card-style kreon-font h-12 w-32 flex items-center text-black hover:text-black hover:bg-orange-600 justify-center rounded-tl-xl rounded-br-xl cursor-pointer transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 shadow-xl duration-300">
                         {data.name}
                       </div>
                     </div>
@@ -60,11 +60,11 @@ function MainComponent() {
               <div className="pt-14 flex justify-end">
                 <img src={logo} className={"h-32 w-32"} alt="" />
               </div>
-              <div className="kreon-font text-white text-4xl w-3/4">
+              <div className="kreon-font text-black text-4xl w-3/4">
                 {dataObject.data.title}
               </div>
               <div className="kreon-font py-3 pt-10">
-                <div className="mb-3 text-white">
+                <div className="mb-3 text-black">
                   <h3 className="text-xl">Dish Types</h3>
                   <p>
                     This type of dish is best suitable for the following dish
@@ -99,12 +99,12 @@ function MainComponent() {
               </div>
             </div>
             <div>
-              <h2 className="kreon-font text-xl text-white flex">
+              <h2 className="kreon-font text-xl text-black flex">
                 Instructions
                 <Alert height={"1rem"} stroke={"red"} />
               </h2>
               <div
-                className="kreon-font text-sm text-justify text-white"
+                className="kreon-font text-sm text-justify text-black"
                 dangerouslySetInnerHTML={{
                   __html: dataObject.data.instructions,
                 }}
