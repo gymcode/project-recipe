@@ -10,7 +10,7 @@ import { ReactComponent as Alert } from "../../Assets/Icons/alert-circle-outline
 
 function MainComponent() {
   const { toggle, visible } = useModal();
-  const {summary, setSummary} = useState("")
+  const { summary, setSummary } = useState("");
   const [dish, setDish] = useState([]);
   const { id } = useParams();
   const dataObject = useFetchNoStorage(Endpoints.RECIPE_INFO(id), {
@@ -26,7 +26,7 @@ function MainComponent() {
       setDish(newDish);
     }, 3000);
   }, []);
-  console.log(summary)
+  console.log(summary);
   return (
     <div className="recipe-container grid grid-cols-2">
       {!dataObject.isLoading ? (
@@ -121,12 +121,13 @@ function MainComponent() {
         <>this is loading</>
       )}
 
-      <Modal visible={visible} toggle={toggle} header={"Recipe Summary"}>
+      <Modal visible={visible} toggle={toggle} header={"Recipe Summary"}>       
         <div
-          className="p-3"
-        >
-          {summary}
-        </div>
+          className="p-3 kreon-font text-lg"
+          dangerouslySetInnerHTML={{
+            __html: dataObject.data.summary,
+          }}
+        />
       </Modal>
     </div>
   );
