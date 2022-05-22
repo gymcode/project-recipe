@@ -77,7 +77,7 @@ function MainComponent(){
                                         title={data.title}
                                         image={data.image}
                                         score={data.healthScore}
-                                        Vegetarian={data.Vegetarian}
+                                        Vegetarian={data.vegetarian}
                                         gluten={data.glutenFree}
                                         id = {data.id}
                                         time = {data.readyInMinutes}

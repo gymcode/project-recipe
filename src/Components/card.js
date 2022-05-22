@@ -32,39 +32,49 @@ function Card({ id, title, image, score, Vegetarian, gluten, time }) {
         >
           <div className="flex justify-around items-center">
             <div>
-              <h2>Health score</h2>
-              <p>{score}</p>
+              <div className="flex justify-center">
+                <div className="h-3 w-3 bg-green-600 rounded mr-2 mt-1" />
+                <div>
+                  <h2 className="text-white">Health score</h2>
+                  <p className="text-sm text-gray-400">{score}%</p>
+                </div>
+              </div>
             </div>
             <div>
-              <h2>Cooking time</h2>
-              <p>{time}mins</p>
+              <div className="flex justify-center">
+                <div className="h-3 w-3 bg-blue-600 rounded mr-2 mt-1" />
+                <div>
+                  <h2 className="text-white">Cooking time</h2>
+                  <p className="text-sm text-gray-400">{time}mins</p>
+                </div>
+              </div>
             </div>
           </div>
           <div className="flex justify-around items-center">
-            <div className="flex text-white">
-            Vegetarian
+            <div className="flex text-white ml-4">
+              Vegetarian
               <div>
                 {Vegetarian ? (
                   <>
-                    <Checker height={"0.8rem"} stroke="#F96107" />
+                    <Checker height={"0.8rem"} fill="#F96107" />
                   </>
                 ) : (
                   <>
-                    <Cross height={"0.8rem"} stroke="black" />
+                    <Cross height={"0.8rem"} fill="black" />
                   </>
                 )}
               </div>
             </div>
-            <div className="flex text-white">
+            <div className="flex text-white ml-4">
               Gluten Free
               <div>
                 {gluten ? (
                   <>
-                    <Checker height={"0.8rem"} stroke="#F96107" />
+                    <Checker height={"0.8rem"} fill="#F96107" />
                   </>
                 ) : (
                   <>
-                    <Cross height={"0.8rem"} stroke="black" />
+                    <Cross height={"0.8rem"} fill="black" />
                   </>
                 )}
               </div>
@@ -77,87 +87,15 @@ function Card({ id, title, image, score, Vegetarian, gluten, time }) {
             className="flex justify-end h-full items-center"
           >
             <div
-              className="border w-10 rounded-full flex items-center justify-center"
-              style={{ borderColor: "white", height: "68%" }}
+              className="border w-10 mt-2 rounded-full flex items-center justify-center"
+              style={{ borderColor: "white", height: "81%" }}
             >
-              <Eye height={"1.5rem"} fill="white" />
+              <Eye height={"1.4rem"} fill="white" />
             </div>
           </div>
         </Link>
       </div>
     </div>
-    // <div
-    //   className={"card-style mt-24 rounded-2xl relative shadow-md"}
-    //   style={{ height: "78%", width: "78%" }}
-    // >
-    //   <div
-    //     className={"absolute left-24 -top-24 h-44 w-44 rounded-full shadow-2xl"}
-    //   >
-    //     <img
-    //       src={image}
-    //       className={"absolute h-44 w-44 rounded-full"}
-    //       style={{
-    //         backgroundAttachment: "fixed",
-    //         backgroundSize: "cover",
-    //         backgroundPosition: "center",
-    //       }}
-    //     />
-    //   </div>
-    //   <div className={"grid grid-rows-5 p-6 h-full"}>
-    //     <div className="row-span-4 mt-20 grid grid-rows-3">
-    //       <div className="flex justify-center items-center row-span-2">
-    //         <h2 className="text-2xl capitalize text-center text-white">
-    //           {title}
-    //         </h2>
-    //       </div>
-    //       <div className="text-gray-400 text-lg flex justify-center">
-    //         <p> Health Score : {score}</p>
-    //       </div>
-    //     </div>
-    //     <div className="border-t border-gray-300 pt-2 flex justify-between items-center">
-    //       <div>
-    //         <div className="flex text-white">
-    //           Vegan
-    //           <div>
-    //             {vegan ? (
-    //               <>
-    //                 <Checker height={"0.8rem"} stroke="#F96107" />
-    //               </>
-    //             ) : (
-    //               <>
-    //                 <Cross height={"0.8rem"} stroke="black" />
-    //               </>
-    //             )}
-    //           </div>
-    //         </div>
-    //         <div className="flex text-white">
-    //           Gluten
-    //           <div>
-    //             {gluten ? (
-    //               <>
-    //                 <Checker height={"0.8rem"} stroke="#F96107" />
-    //               </>
-    //             ) : (
-    //               <>
-    //                 <Cross height={"0.8rem"} stroke="black" />
-    //               </>
-    //             )}
-    //           </div>
-    //         </div>
-    //       </div>
-    //       <div>
-    //         <Link to={`/recipe/${id}`}>
-    //           <div
-    //             className="h-10 w-32 flex justify-center items-center rounded-tl-lg rounded-br-lg cursor-pointer"
-    //             style={{ background: "#F96107" }}
-    //           >
-    //             view
-    //           </div>
-    //         </Link>
-    //       </div>
-    //     </div>
-    //   </div>
-    // </div>
   );
 }
 
