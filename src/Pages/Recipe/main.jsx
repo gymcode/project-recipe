@@ -46,7 +46,7 @@ function MainComponent() {
                 {dataObject.data.extendedIngredients.map((data) => (
                   <>
                     <div className="px-4 py-5">
-                      <div className="card-style kreon-font h-12 w-32 flex items-center text-black hover:text-black hover:bg-orange-600 justify-center rounded-tl-xl rounded-br-xl cursor-pointer transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 shadow-xl duration-300">
+                      <div className="card-style kreon-font h-12 w-32 flex items-center text-black hover:text-white hover:bg-orange-500 justify-center rounded-tl-xl rounded-br-xl cursor-pointer transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 shadow-xl duration-300">
                         {data.name}
                       </div>
                     </div>
