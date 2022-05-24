@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 function Card({ id, title, image, score, Vegetarian, gluten, time }) {
   return (
     <div
-      className="bg-white card-style shadow-xl mt-20 rounded-lg grid grid-cols-2 border-black"
+      className="bg-white card-style shadow-xl mt-20 rounded-lg grid grid-cols-2 border-black "
       style={{ height: "75%", width: "93%" }}
     >
       <div className="h-full w-full">
