@@ -122,12 +122,12 @@ function MainComponent() {
       )}
 
       <Modal visible={visible} toggle={toggle} header={"Recipe Summary"}>       
-        <div
+        {/* <div
           className="p-3 kreon-font text-lg"
           dangerouslySetInnerHTML={{
             __html: dataObject.data.summary,
           }}
-        />
+        /> */}
       </Modal>
     </div>
   );

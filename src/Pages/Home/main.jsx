@@ -42,15 +42,14 @@ function MainComponent(){
         animationData: loadingData,
     }
     return (
-        <div className={"main-container grid grid-rows-2 grid-flow-col p-20"}>
+        <div className={"main-container grid grid-rows-2 grid-flow-col p-20 sm:p-16 xs:p-12"}>
             {/* responsiveness  */}
             <div className={"flex flex-row justify-between"}>
                 <div>
-                    <h3 className={"kreon-font capitalize text-8xl text-white"}>Simple and <br />tasty <span style={{ color: "#F96107" }}>recipe</span></h3>
-                    <div className={"py-12 w-2/4 px-5"}>
+                    <h3 className={"kreon-font capitalize text-8xl sm:text-6xl xs:text-4xl text-white"}>Simple and <br />tasty <span style={{ color: "#F96107" }}>recipe</span></h3>
+                    <div className={"py-12 w-2/4 px-5 sm:"}>
                         <p className={"dancing-script text-xl text-white pb-3"}><q>{quote.content}</q></p>
                         <p className="pacifico text-xl text-white">~{quote.author}</p>
-                        
                     </div>
                 </div>
                 <div>
