@@ -87,7 +87,7 @@ function MainComponent() {
           className={"grid grid-cols-6 gap-8 px-5 h-full flex justify-center"}
         >
           {/* random recipes iterations  */}
-          <div className={"col-span-5 grid grid-cols-2"}>
+          <div className={"col-span-5 grid lg:grid-cols-2 lg:grid-rows-none xs:grid-cols-none xs:grid-rows-2"}>
             {dataResponse.isLoading ? (
               <div>
                 <Lottie options={defaultLoadingOptions} />
