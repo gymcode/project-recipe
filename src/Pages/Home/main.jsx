@@ -42,19 +42,21 @@ function MainComponent(){
         animationData: loadingData,
     }
     return (
-        <div className={"main-container grid grid-rows-2 grid-flow-col p-20 sm:p-16 xs:p-12"}>
+        <div className={"main-container grid grid-rows-2 grid-flow-col lg:p-20 md:p-20 sm:p-16 xs:p-12"}>
             {/* responsiveness  */}
-            <div className={"flex flex-row justify-between"}>
-                <div>
-                    <h3 className={"kreon-font capitalize text-8xl sm:text-6xl xs:text-4xl text-white"}>Simple and <br />tasty <span style={{ color: "#F96107" }}>recipe</span></h3>
-                    <div className={"py-12 w-2/4 px-5 sm:"}>
-                        <p className={"dancing-script text-xl text-white pb-3"}><q>{quote.content}</q></p>
-                        <p className="pacifico text-xl text-white">~{quote.author}</p>
+            <div>
+                <div className={"flex flex-row justify-between items-center"}>
+                    <div>
+                        <h3 className={"kreon-font capitalize lg:text-8xl md:text-8xl sm:text-6xl xs:text-4xl text-white"}>Simple and <br />tasty <span style={{ color: "#F96107" }}>recipe</span></h3>
+                    </div>
+                    <div>
+                    {/* Good food, good mood. */}
+                        <img src={logo} className={"lg:h-32 lg:w-32 md:h-32 md:w-32 sm:h-32 sm:w-32 xs:h-20 w-20"} alt="" />
                     </div>
                 </div>
-                <div>
-                {/* Good food, good mood. */}
-                    <img src={logo} className={"h-32 w-32"} alt="" />
+                <div className={"py-12 w-2/4 px-5"}>
+                        <p className={"dancing-script text-xl text-white pb-3"}><q>{quote.content}</q></p>
+                        <p className="pacifico text-xl text-white">~{quote.author}</p>          
                 </div>
             </div>
             <div className={"kreon-font"}>
