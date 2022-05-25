@@ -84,7 +84,7 @@ function MainComponent() {
       <div className={"kreon-font"}>
         <h4 className="capitalize text-xl lg:mt-1 sm:text-md xs:text-md text-white xs:-mt-20">Top Trends ....</h4>
         <div
-          className={"grid grid-cols-6 gap-8 px-5 h-full flex justify-center"}
+          className={"grid lg:grid-cols-6 xs:grid-cols-1 sm:grid-cols-1 gap-8 lg:px-5 xs:px-1 h-full flex justify-center"}
         >
           {/* random recipes iterations  */}
           <div className={"col-span-5 grid lg:grid-cols-2 lg:grid-rows-none xs:grid-cols-none xs:grid-rows-2"}>

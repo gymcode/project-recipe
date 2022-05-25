@@ -7,13 +7,13 @@ import { Link } from "react-router-dom";
 function Card({ id, title, image, score, Vegetarian, gluten, time }) {
   return (
     <div
-      className="bg-white card-style shadow-xl mt-20 rounded-lg grid grid-cols-2 border-black "
-      style={{ height: "75%", width: "93%" }}
+      className="bg-white card-style shadow-xl lg:mt-20 xs:mt-7 rounded-lg grid lg:grid-cols-2 
+                    lg:grid-rows-none sm:grid-rows-2 xs:grid-cols-2 border-black lg:h-3/4 lg:w-1/10 xs:w-full xs:h-48"
     >
-      <div className="h-full w-full">
+      <div className="lg:h-full lg:w-full xs:h-3/4">
         <img
           src={image}
-          className={"h-full w-full rounded-lg"}
+          className={"lg:h-full lg:w-full xs:h-3/4 rounded-lg"}
           style={{
             backgroundSize: "cover",
             backgroundPosition: "center",

@@ -7,6 +7,9 @@ module.exports = {
       'xs': '320px',
       ...defaultTheme.screens
     },
+    width: {
+      '1/10' : "93%"
+    }
   },
   plugins: [require("flowbite/plugin")],
 };
