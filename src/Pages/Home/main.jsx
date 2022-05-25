@@ -68,13 +68,13 @@ function MainComponent() {
             <img
               src={logo}
               className={
-                "lg:h-32 lg:w-32 md:h-32 md:w-32 sm:h-28 sm:w-28 xs:h-20 w-20"
+                "lg:h-24 lg:w-24 md:h-32 md:w-32 sm:h-28 sm:w-28 xs:h-12 w-12"
               }
               alt=""
             />
           </div>
         </div>
-        <div className={"lg:py-12 xs:py-6 lg:w-2/4 lg:px-5"}>
+        <div className={"py-12 lg:w-[40%]  px-5"}>
           <p className={"dancing-script text-xl text-white pb-3"}>
             <q>{quote.content}</q>
           </p>
