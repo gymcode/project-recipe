@@ -27,12 +27,12 @@
     font-weight: 500;
 }
 
-/* .lottie{
-    width: 25rem;
+.lottie{
+    width: 20rem;
     height: 26rem;
     transform: translate3d(-40px, 10px, 0px);
     content-visibility: visible;
-} */
+}
 
 @media screen and (min-width: 1440) {
     .lottie{
