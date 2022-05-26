@@ -9,6 +9,7 @@ import Card from "../../Components/card";
 import Lottie from "react-lottie";
 import * as animationData from "../../Assets/lottie/lf30_editor_chrsdjer.json";
 import * as loadingData from "../../Assets/lottie/lf30_editor_xad43im4.json";
+import * as nextPageLoader from "../../Assets/lottie/lf30_editor_cialu9mk.json";
 
 function MainComponent() {
   const [quote, setQuote] = useState(JsonQuoteData.quote[0]);
@@ -32,6 +33,12 @@ function MainComponent() {
       setQuote(randomData);
     }
   }, [quote]);
+
+  const defaultArrowOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: nextPageLoader,
+  };
 
   const defaultOptions = {
     loop: true,
@@ -82,12 +89,20 @@ function MainComponent() {
         </div>
       </div>
       <div className={"kreon-font"}>
-        <h4 className="capitalize text-xl xl:mt-1 sm:text-md xs:text-md text-white xs:-mt-20">Top Trends ....</h4>
+        <h4 className="capitalize text-xl xl:mt-1 sm:text-md xs:text-md text-white xs:-mt-20">
+          Top Trends ....
+        </h4>
         <div
-          className={"grid xl:grid-cols-6 xs:grid-cols-1 sm:grid-cols-1 gap-8 xl:px-5 xs:px-1 h-full flex justify-center"}
+          className={
+            "grid xl:grid-cols-6 xs:grid-cols-1 sm:grid-cols-1 gap-8 xl:px-5 xs:px-1 h-full flex justify-center"
+          }
         >
           {/* random recipes iterations  */}
-          <div className={"col-span-5 grid xl:grid-cols-2 xl:grid-rows-none md:grid-cols-2 md:grid-rows-none sm:grid-cols-none sm:grid-rows-2 xs:grid-cols-none xs:grid-rows-2"}>
+          <div
+            className={
+              "col-span-5 grid xl:grid-cols-2 xl:grid-rows-none md:grid-cols-2 md:grid-rows-none sm:grid-cols-none sm:grid-rows-2 xs:grid-cols-none xs:grid-rows-2"
+            }
+          >
             {dataResponse.isLoading ? (
               <div>
                 <Lottie options={defaultLoadingOptions} />
@@ -114,6 +129,9 @@ function MainComponent() {
               <Lottie options={defaultOptions} />
             </div>
           </Link>
+        </div>
+        <div className="md:flex md:justify-center md:items-center h-20 -mt-20 lg:hidden sm:hidden xs:hidden">
+            <Lottie options={defaultArrowOptions} />
         </div>
       </div>
     </div>

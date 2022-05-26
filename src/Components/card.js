@@ -8,7 +8,7 @@ function Card({ id, title, image, score, Vegetarian, gluten, time }) {
   return (
     <div
       className="bg-white card-style shadow-xl lg:mt-20 xs:mt-7 rounded-lg grid lg:grid-cols-2 
-                    lg:grid-rows-none sm:grid-rows-2 xs:grid-cols-2 border-black lg:h-3/4 lg:w-1/10 xs:w-full xs:h-48"
+                    lg:grid-rows-none sm:grid-rows-2 xs:grid-cols-2 border-black lg:h-3/4 lg:w-1/10 md:w-1/10 xs:w-full xs:h-48"
     >
       <div className="lg:h-full lg:w-full">
         <img
@@ -22,7 +22,7 @@ function Card({ id, title, image, score, Vegetarian, gluten, time }) {
       </div>
       <div className="h-full w-full lg:p-5 xs:p-2 grid grid-row-5">
         <div className="flex justify-center items-center row-span-3">
-          <h2 className="lg:text-2xl xs:text-md capitalize text-center text-white lg:h-16 xs:h-5">
+          <h2 className="lg:text-2xl xs:text-md capitalize text-center text-white lg:h-16 md:h-16 xs:h-5">
             {title}
           </h2>
         </div>
@@ -50,7 +50,7 @@ function Card({ id, title, image, score, Vegetarian, gluten, time }) {
               </div>
             </div>
           </div>
-          <div className="flex lg:flex-row xs:flex-col justify-around items-center">
+          <div className="flex lg:flex-row md:flex-row xs:flex-col justify-around items-center">
             <div className="flex text-white ml-4">
               Vegetarian
               <div>
