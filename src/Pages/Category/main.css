@@ -1,9 +1,5 @@
 .category-container {
-    background-image: url("../../Assets/Images/Frame4.png");
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
+    background-color: rgb(255, 249, 227);
     width: 100vw;
     height: 100vh;
 }
