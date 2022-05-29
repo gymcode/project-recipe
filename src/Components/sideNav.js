@@ -36,8 +36,8 @@ const NavigationControl = [
 
 const SideNav = () => {
   return (
-    <nav className="w-[19%] side-nav-container bg-red-400 xl:block lg:bloxk md:block sm:hidden xs:hidden shadow-xl">
-      <div className="w-auto h-36 mt-8 flex items-center px-12">
+    <nav className="w-auto side-nav-container h-full bg-red-400 xl:block lg:bloxk md:block sm:hidden xs:hidden shadow-xl">
+      <div className="w-auto h-36 pt-8 py-5 flex items-center px-12">
         <img src={CuisineLogo} className="h-[4.5rem]" />
       </div>
       <div className="px-10">
