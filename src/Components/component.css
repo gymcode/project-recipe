@@ -4,6 +4,11 @@
     /* Note: backdrop-filter has minimal browser support */
 }
 
+.side-nav-container{
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.08) 0%, rgba(196, 196, 196, 0) 100%);
+    backdrop-filter: blur(50px);
+}
+
 .modal {
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Overlay effect: translucent background: black w/ partial opacity */
