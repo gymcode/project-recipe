@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap');
+
 .card-style {
     background: linear-gradient(145.63deg, rgba(134, 134, 134, 0.4) -87.29%, rgba(201, 201, 201, 0) 167.05%, rgba(252, 252, 252, 0.128) 167.05%);
     backdrop-filter: blur(50px);
@@ -20,4 +22,8 @@
     left: 0;
     overflow: auto; /* Enable scroll if needed */
     padding-top: 90px; /* Location of the content container */
+}
+
+.rubik{
+    font-family: 'Didact Gothic', sans-serif;
 }
