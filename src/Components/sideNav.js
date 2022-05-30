@@ -1,5 +1,6 @@
 import "./component.css"
 import CuisineLogo from "../Assets/Images/logo2.svg"
+import { ReactComponent as Home } from "../Assets/Icons/home-outline.svg";
 
 const NavigationControl = [
   {
@@ -41,6 +42,15 @@ const SideNav = () => {
         <img src={CuisineLogo} className="h-[4.5rem]" />
       </div>
       <div className="px-10">
+        <h2 className="capitalize text-sm text-gray-700 pb-2 px-3 font-sans border-b font-extralight">Main Dash</h2>
+          <div className="flex h-12 items-center my-1 px-3 text-gray-800 hover:rounded-lg hover:bg-[#FFE0D6] hover:text-[#F83F05] hover:shadow-sm hover:transition hover:delay-150 hover:duration-300 hover:ease-in-out cursor-pointer">
+            <div className="pr-5">
+              <Home height={"1.6rem"} fill={"#555555"}/>
+            </div>
+            <div className="rubik font-medium">Home</div>
+          </div>
+      </div>
+      <div className="px-10 mt-6">
         <h2 className="capitalize text-sm text-gray-700 pb-2 px-3 font-sans border-b font-extralight">Diet Categories</h2>
         {NavigationControl.map((data) => (
           // navigationlinks

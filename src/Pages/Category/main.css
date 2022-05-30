@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Cookie&display=swap');
+
 .category-container {
     width: 100vw;
     height: 100vh;
@@ -6,6 +8,10 @@
 
 .kreon-font{
     font-family: 'Kreon', serif;
+}
+
+.cookie-font{
+    font-family: 'Cookie', cursive;
 }
 
 .healthy-lottie{
@@ -19,4 +25,10 @@
     background-image: url("../../Assets/Images/card2.png");
     background-size: cover;
     background-position: center;
+}
+
+.post-header-img{
+    background-color: #555555;
+    height: 14rem;
+    background: linear-gradient(348.91deg, #FFE600 -22.93%, rgba(253, 228, 6, 0.968646) -22.91%, rgba(253, 228, 7, 0.963542) -22.9%, #F83F05 53.2%);
 }
