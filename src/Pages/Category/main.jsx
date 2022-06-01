@@ -5,6 +5,12 @@ import Search from "../../Components/search";
 
 // components import
 import Home from "./HomeCategory/home";
+import Pescaterian from "./Pescaterian/pescaterian";
+import Paleo from "./Paleo/paleo";
+import Vegan from "./Vegan/vegan";
+import Vegetarian from "./Vegetarian/vegetarian";
+import Omnivore from "./Omnivore/omnivore";
+import Fruitarian from "./Fruitarian/fruitarian";
 
 function MainComponent() {
   const [tab, setTab] = useState("Home");
@@ -28,6 +34,12 @@ function MainComponent() {
           <div className="p-10 ml-1 mt-20">
             {/* render random components in this section */}
             {tab === "Home" && <Home />}
+            {tab === "Paleo" && <Paleo />}
+            {tab === "Fruitarian" && <Fruitarian />}
+            {tab === "Vegan" && <Vegan />}
+            {tab === "Vegetrarian" && <Vegetarian />}
+            {tab === "Omnivore" && <Omnivore />}
+            {tab === "Pescaterian" && <Pescaterian />}
           </div>
         </div>
       </div>

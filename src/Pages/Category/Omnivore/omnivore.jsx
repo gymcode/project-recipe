@@ -1,6 +1,6 @@
 import CookingFrame from "../../../Assets/Images/Cooking-pana.svg";
 
-const Home = () => {
+const Omnivore = () => {
   return (
     <div className="">
       <div className="post-header-img rounded-2xl w-2/3 flex">
@@ -26,4 +26,4 @@ const Home = () => {
   );
 };
 
-export default Home
+export default Omnivore
