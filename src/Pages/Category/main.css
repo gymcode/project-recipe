@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Cookie&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap');
 
 .category-container {
     width: 100vw;
@@ -12,6 +14,10 @@
 
 .cookie-font{
     font-family: 'Cookie', cursive;
+}
+
+.roboto-font{
+    font-family: 'Inter', sans-serif;
 }
 
 .healthy-lottie{
@@ -31,4 +37,11 @@
     background-color: #555555;
     height: 14rem;
     background: linear-gradient(348.91deg, #FFE600 -22.93%, rgba(253, 228, 6, 0.968646) -22.91%, rgba(253, 228, 7, 0.963542) -22.9%, #F83F05 53.2%);
+}
+
+
+.category-background{
+    background-color: #ffffff;
+    background-image: url("https://www.transparenttextures.com/patterns/concrete-wall.png");
+    backdrop-filter: blur(50px);
 }

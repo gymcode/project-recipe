@@ -6,7 +6,7 @@ const Home = () => {
       <div className="post-header-img rounded-2xl w-2/3 flex">
         <div className="w-[62%] p-10 text-white">
           <h2 className="text-5xl kreon-font py-3">Hey there,</h2>
-          <p className="leading-none cookie-font text-lg text-gray-900">
+          <p className="leading-none text-[0.8rem] font-semibold roboto-font text-white">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic,
             incidunt! Sit rerum harum repellat qui voluptas accusamus non itaque
             veniam maiores, laborum atque. Dolore eum harum natus velit, saepe

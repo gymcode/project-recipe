@@ -47,14 +47,4 @@ function MainComponent() {
   );
 }
 
-{
-  /* side navigation  */
-}
-{
-  /* <SideNav /> */
-}
-{
-  /* <Search /> */
-}
-
 export default MainComponent;
