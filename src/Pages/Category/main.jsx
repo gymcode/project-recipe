@@ -37,7 +37,7 @@ function MainComponent() {
             {tab === "Paleo" && <Paleo />}
             {tab === "Fruitarian" && <Fruitarian />}
             {tab === "Vegan" && <Vegan />}
-            {tab === "Vegetrarian" && <Vegetarian />}
+            {tab === "Vegetarian" && <Vegetarian />}
             {tab === "Omnivore" && <Omnivore />}
             {tab === "Pescaterian" && <Pescaterian />}
           </div>
