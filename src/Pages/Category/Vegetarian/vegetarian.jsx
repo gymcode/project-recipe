@@ -1,4 +1,8 @@
 import CookingFrame from "../../../Assets/Images/Cooking-pana.svg";
+import { ReactComponent as Person } from "../../../Assets/Icons/people-outline.svg";
+import { ReactComponent as Eye } from "../../../Assets/Icons/eye-outline.svg";
+import { ReactComponent as Menu } from "../../../Assets/Icons/menu-2-outline.svg";
+import { ReactComponent as Bookmark } from "../../../Assets/Icons/bookmark-outline.svg";
 
 const Vegetarian = () => {
   return (
@@ -21,12 +25,52 @@ const Vegetarian = () => {
           </div>
           <div className="w-full grid grid-rows-2 h-max-full gap-5">
             <div className="grid grid-cols-2 gap-5">
-              <div className="bg-[#FFD3D3] rounded-xl p-4">dasd</div>
-              <div className="bg-[#DCFFD3] rounded-xl p-4">dsa</div>
+              <div className="bg-[#FFD3D3] rounded-xl p-4 px-5 flex items-center">
+                <div className="flex-2 w-16 border-r border-[#FFA794]">
+                  <Person height={"3.2rem"} fill={"#FF785A"} />
+                </div>
+                <div className="flex flex-col items-center px-4">
+                  <div className="kreon-font text-sm text-gray-500">
+                    Vegetarian Percentage
+                  </div>
+                  <div className="text-3xl font-bold text-[#FF785A]">90%</div>
+                </div>
+              </div>
+              <div className="bg-[#DCFFD3] rounded-xl p-4 px-5 flex items-center ">
+                <div className="flex-2 w-16 border-r border-[#82FF6D]">
+                  <Menu height={"3.2rem"} fill={"#69FF51"} />
+                </div>
+                <div className="flex flex-col items-center px-4">
+                  <div className="kreon-font text-sm text-gray-500">
+                    Total Menus
+                  </div>
+                  <div className="text-3xl font-bold text-[#69FF51]">90%</div>
+                </div>
+              </div>
             </div>
             <div className="grid grid-cols-2 gap-5">
-              <div className="bg-[#D3E0FF] rounded-xl p-4">das</div>
-              <div className="bg-[#FFFBD3] rounded-xl p-4">asd</div>
+              <div className="bg-[#D3E0FF] rounded-xl p-4 px-5 flex items-center ">
+                <div className="flex-2 w-16 border-r border-[#5182FF]">
+                  <Eye height={"3.2rem"} fill={"#0047FF"} />
+                </div>
+                <div className="flex flex-col items-center px-4">
+                  <div className="kreon-font text-sm text-gray-500">
+                    Guide Views
+                  </div>
+                  <p className="text-3xl font-bold text-[#5182FF] oldstyle-nums">1,240K</p>
+                </div>
+              </div>
+              <div className="bg-[#FFEBD3] rounded-xl p-4 px-5 flex items-center ">
+                <div className="flex-2 w-16 border-r border-[#FFB865]">
+                  <Bookmark height={"3.2rem"} fill={"#FFB865"} />
+                </div>
+                <div className="flex flex-col items-center px-4">
+                  <div className="kreon-font text-sm text-gray-500">
+                    Total Bookmarks
+                  </div>
+                  <div className="text-3xl font-bold text-[#FFB865]">26,567K</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -40,4 +84,4 @@ const Vegetarian = () => {
   );
 };
 
-export default Vegetarian
+export default Vegetarian;
