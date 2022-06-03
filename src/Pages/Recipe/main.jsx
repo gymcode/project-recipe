@@ -17,15 +17,6 @@ function MainComponent() {
     isLoading: true,
     data: null,
   });
-
-  useEffect(() => {
-    setTimeout(() => {
-      const newDish = dataObject.data.dishTypes.map((data) => {
-        return { name: data };
-      });
-      setDish(newDish);
-    }, 3000);
-  }, []);
   console.log(summary);
   return (
     <div className="recipe-container grid grid-cols-2">
@@ -33,16 +24,16 @@ function MainComponent() {
         <>
           <div className="grid grid-rows-3">
             <div
-              className="row-span-2 shadow-6xl"
+              className="row-span-3 rounded-2xl"
               style={{
-                clipPath: "circle(67% at 34% 16%)",
+                margin: "2rem",
                 backgroundSize: "cover",
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
                 backgroundImage: `url(${dataObject.data.image})`,
               }}
             />
-            <div className="p-5 pl-16">
+            {/* <div className="p-5 pl-16">
               <h3 className="kreon-font text-xl text-black">
                 Extended Ingredients
               </h3>
@@ -57,38 +48,24 @@ function MainComponent() {
                   </>
                 ))}
               </div>
-            </div>
+            </div> */}
           </div>
-          <div className="grid grid-rows-2 pr-16">
-            <div>
-              <div className="pt-14 flex justify-end">
+          <div className="grid grid-rows-2 p-12">
+            <div className="">
+              <div className="flex items-center justify-between">
+                <div className="kreon-font text-black text-4xl w-3/4">
+                  {dataObject.data.title}
+                </div>
                 <img src={logo} className={"h-32 w-32"} alt="" />
               </div>
-              <div className="kreon-font text-black text-4xl w-3/4">
-                {dataObject.data.title}
-              </div>
-              <div className="kreon-font py-3 pt-10">
-                <div className="mb-3 text-black">
-                  <h3 className="text-xl">Dish Types</h3>
-                  <p>
-                    This type of dish is best suitable for the following dish
-                    types
-                  </p>
-                </div>
-                <div className="flex flex-wrap">
-                  {dish.map((data) => (
-                    <>
-                      <div className="pr-3">
-                        <div
-                          className="card-style kreon-font h-8 w-32 flex items-center text-white justify-center rounded-tl-2xl rounded-br-2xl"
-                          style={{ background: "#000" }}
-                        >
-                          {data.name}
-                        </div>
-                      </div>
-                    </>
-                  ))}
-                </div>
+              <div className="bg-yellow-100">
+                <h2 className="kreon-font">Recipe Summary</h2>
+                <div
+                  className="kreon-font text-lg text-justify"
+                  dangerouslySetInnerHTML={{
+                    __html: dataObject.data.summary,
+                  }}
+                />
               </div>
               <div>
                 <div
@@ -109,7 +86,7 @@ function MainComponent() {
                 <Alert height={"1rem"} stroke={"red"} />
               </h2>
               <div
-                className="kreon-font text-sm text-justify text-black"
+                className="kreon-font text-sm text-justify text-black text-justify"
                 dangerouslySetInnerHTML={{
                   __html: dataObject.data.instructions,
                 }}
@@ -121,7 +98,7 @@ function MainComponent() {
         <>this is loading</>
       )}
 
-      <Modal visible={visible} toggle={toggle} header={"Recipe Summary"}>       
+      <Modal visible={visible} toggle={toggle} header={"Recipe Summary"}>
         {/* <div
           className="p-3 kreon-font text-lg"
           dangerouslySetInnerHTML={{
