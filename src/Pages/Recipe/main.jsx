@@ -22,35 +22,21 @@ function MainComponent() {
     <div className="recipe-container grid grid-cols-2">
       {!dataObject.isLoading ? (
         <>
-          <div className="grid grid-rows-3">
-            <div
-              className="row-span-3 rounded-2xl"
-              style={{
-                margin: "2rem",
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-                backgroundRepeat: "no-repeat",
-                backgroundImage: `url(${dataObject.data.image})`,
-              }}
-            />
-            {/* <div className="p-5 pl-16">
-              <h3 className="kreon-font text-xl text-black">
-                Extended Ingredients
-              </h3>
-              <div className="flex flex-wrap">
-                {dataObject.data.extendedIngredients.map((data) => (
-                  <>
-                    <div className="px-4 py-5">
-                      <div className="card-style kreon-font h-12 w-32 flex items-center text-black hover:text-white hover:bg-orange-500 justify-center rounded-tl-xl rounded-br-xl cursor-pointer transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 shadow-xl duration-300">
-                        {data.name}
-                      </div>
-                    </div>
-                  </>
-                ))}
-              </div>
-            </div> */}
+          <div>
+            <div className="p-6 h-full">
+              <img
+                src={dataObject.data.image}
+                className="h-full rounded-xl"
+                style={{
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                  backgroundRepeat: "no-repeat",
+                }}
+                alt=""
+              />
+            </div>
           </div>
-          <div className="grid grid-rows-2 p-12">
+          <div className="p-10 relative">
             <div className="">
               <div className="flex items-center justify-between">
                 <div className="kreon-font text-black text-4xl w-3/4">
@@ -58,39 +44,37 @@ function MainComponent() {
                 </div>
                 <img src={logo} className={"h-32 w-32"} alt="" />
               </div>
-              <div className="bg-yellow-100">
-                <h2 className="kreon-font">Recipe Summary</h2>
-                <div
-                  className="kreon-font text-lg text-justify"
-                  dangerouslySetInnerHTML={{
-                    __html: dataObject.data.summary,
-                  }}
-                />
-              </div>
-              <div>
-                <div
-                  onClick={toggle}
-                  className="kreon-font lg:mt-8 h-10 w-full flex justify-center items-center shadow-lg cursor-pointer"
-                  style={{
-                    background:
-                      "linear-gradient(180.18deg, #4D77ED 0.16%, #F98809 0.17%, #F83F05 85.53%)",
-                  }}
-                >
-                  Recipe summary
-                </div>
-              </div>
             </div>
-            <div>
+            <div className="card-background p-8 shadow-md rounded-xl border border-gray-100">
+              <h2 className="kreon-font text-xl">Recipe Summary</h2>
+              <div
+                className="rubik pt-2 text-lg text-justify"
+                dangerouslySetInnerHTML={{
+                  __html: dataObject.data.summary,
+                }}
+              />
+            </div>
+            <div className="mt-10 h-[40%]">
               <h2 className="kreon-font text-xl text-black flex">
                 Instructions
                 <Alert height={"1rem"} stroke={"red"} />
               </h2>
               <div
-                className="kreon-font text-sm text-justify text-black text-justify"
+                className="rubik text-base text-justify text-black text-justify h-11/12 overflow-y-auto"
                 dangerouslySetInnerHTML={{
                   __html: dataObject.data.instructions,
                 }}
               />
+            </div>
+            <div
+              onClick={toggle}
+              className="kreon-font lg:mt-3 h-10 w-11/12 flex justify-center items-center shadow-xl rounded-lg cursor-pointer absolute buttom-0"
+              style={{
+                background:
+                  "linear-gradient(180.18deg, #4D77ED 0.16%, #F98809 0.17%, #F83F05 85.53%)",
+              }}
+            >
+              View more...
             </div>
           </div>
         </>
@@ -98,13 +82,24 @@ function MainComponent() {
         <>this is loading</>
       )}
 
-      <Modal visible={visible} toggle={toggle} header={"Recipe Summary"}>
-        {/* <div
-          className="p-3 kreon-font text-lg"
-          dangerouslySetInnerHTML={{
-            __html: dataObject.data.summary,
-          }}
-        /> */}
+      <Modal visible={visible} toggle={toggle} header={"Extended Ingredients"}>
+        {!dataObject.isLoading ? (
+          <>
+            <div className="flex flex-wrap">
+              {dataObject.data.extendedIngredients.map((data) => (
+                <>
+                  <div className="px-3 py-3">
+                    <div className="card-style kreon-font h-12 w-32 flex items-center text-black hover:text-white hover:bg-orange-500 justify-center rounded-tl-xl rounded-br-xl cursor-pointer transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 shadow-xl duration-300">
+                      {data.name}
+                    </div>
+                  </div>
+                </>
+              ))}
+            </div>
+          </>
+        ) : (
+          <>load</>
+        )}
       </Modal>
     </div>
   );

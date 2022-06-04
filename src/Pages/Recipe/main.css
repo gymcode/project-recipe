@@ -1,11 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap');
+
 .recipe-container {
-    /* background-image: url("../../Assets/Images/Frame18.png"); */
+    background-image: url("../../Assets/Images/Frame23.png");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
     background-repeat: no-repeat;
     width: 100vw;
     height: 100vh;
+}
+
+.rubik{
+    font-family: 'Didact Gothic', sans-serif;
 }
 
 .kreon-font{
@@ -24,3 +30,9 @@
     background-size: cover;
     background-position: center;
 }  
+
+.card-background{
+    background-color: #ffffff;
+    background-image: url("https://www.transparenttextures.com/patterns/concrete-wall.png");
+    backdrop-filter: blur(50px);
+}
