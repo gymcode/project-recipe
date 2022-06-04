@@ -1,5 +1,6 @@
 import React from 'react'
 import './App.css';
+import 'react-alice-carousel/lib/alice-carousel.css';
 import {
   Routes, 
   Route,

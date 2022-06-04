@@ -1,6 +1,24 @@
 import CookingFrame from "../../../Assets/Images/Cooking-pana.svg";
+import AliceCarousel from 'react-alice-carousel';
+
+const handleDragStart = (e) => e.preventDefault();
+
+const items = [
+  <div className="bg-red-200">dsdasdasad</div>,
+  <div className="bg-green-200">hello</div>,
+  <div className="bg-blue-200">hey</div>,
+  <div className="bg-yellow-200">thisbise</div>,
+];
 
 const Home = () => {
+  var settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
+
   return (
     <div className="">
       <div className="post-header-img rounded-2xl w-2/3 flex">
@@ -18,6 +36,10 @@ const Home = () => {
         </div>
       </div>
       <div className="my-8">
+        <h2 className="kreon-font"><strong>Popular</strong> this week </h2>
+        
+      </div>
+      <div className="my-8">
         <h2 className="kreon-font">
           Let's guess some dishes you'll like to prepare...
         </h2>
@@ -26,4 +48,4 @@ const Home = () => {
   );
 };
 
-export default Home
+export default Home;

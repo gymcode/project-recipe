@@ -75,7 +75,7 @@ function MainComponent() {
             <img
               src={logo}
               className={
-                "xl:h-24 xl:w-24 md:h-32 md:w-32 sm:h-28 sm:w-28 xs:h-12 w-12"
+                "xl:h-28 xl:w-28 md:h-32 md:w-32 sm:h-28 sm:w-28 xs:h-12 w-12"
               }
               alt=""
             />
