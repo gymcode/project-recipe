@@ -9,7 +9,7 @@ const DashboardHeader = ({ children, percentage, menus, views, bookmarks }) => {
       <div className="grid grid-cols-2 h-60 my-5 gap-16 px-10">
         <div className="category-background w-full rounded-2xl shadow-lg border border-gray-100 p-7">
           <h2 className="kreon-font text-lg">Category Description</h2>
-          <div className="roboto-font font-semibold pt-6 text-[0.8rem] tracking-wider">
+          <div className="imprima-font font-medium pt-6 text-[0.8rem] tracking-wider">
             {children}
           </div>
           <div className="flex justify-end mt-6 cookie-font text-3xl text-[#F83F05]">

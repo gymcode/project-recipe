@@ -26,7 +26,7 @@ function MainComponent() {
     <div className="">
       {!dataObject.isLoading ? (
         <>
-          <div className="recipe-containergrid lg:grid-cols-2 xl:grid-cols-2 sm:grid-cols-none xs:grid-cols-none">
+          <div className="recipe-container grid lg:grid-cols-2 xl:grid-cols-2 sm:grid-cols-none xs:grid-cols-none">
             <>
               <div>
                 <div className="p-6 h-full">
@@ -75,7 +75,7 @@ function MainComponent() {
                 <div className="card-background p-8 shadow-md rounded-xl border border-gray-100">
                   <h2 className="kreon-font text-xl">Recipe Summary</h2>
                   <div
-                    className="rubik pt-2 text-lg text-justify"
+                    className="imprima-font pt-2 text-lg text-justify"
                     dangerouslySetInnerHTML={{
                       __html: dataObject.data.summary,
                     }}
@@ -87,7 +87,7 @@ function MainComponent() {
                     <Alert height={"1rem"} stroke={"red"} />
                   </h2>
                   <div
-                    className="rubik text-base text-justify text-black text-justify h-11/12 overflow-y-auto"
+                    className="imprima-font text-base text-justify text-black text-justify h-11/12 overflow-y-auto"
                     dangerouslySetInnerHTML={{
                       __html: dataObject.data.instructions,
                     }}

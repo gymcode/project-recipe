@@ -1,4 +1,4 @@
-@import "react-alice-carousel/lib/alice-carousel.css";
+@import url('https://fonts.googleapis.com/css2?family=Imprima&display=swap');
 
 .App {
   text-align: center;
@@ -7,6 +7,14 @@
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+
+.imprima-font{
+  font-family: 'Imprima', sans-serif;
+}
+
+.kreon-font{
+  font-family: 'Kreon', serif;
 }
 
 @media (prefers-reduced-motion: no-preference) {
