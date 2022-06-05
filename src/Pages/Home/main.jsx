@@ -7,6 +7,7 @@ import { Endpoints } from "../../services/endpoints";
 import { useFetch, useModal } from "../../Hooks";
 import Card from "../../Components/card";
 import Lottie from "react-lottie";
+import { motion } from "framer-motion";
 import * as animationData from "../../Assets/lottie/lf30_editor_chrsdjer.json";
 import * as loadingData from "../../Assets/lottie/lf30_editor_xad43im4.json";
 import * as nextPageLoader from "../../Assets/lottie/lf30_editor_cialu9mk.json";
@@ -52,25 +53,32 @@ function MainComponent() {
     animationData: loadingData,
   };
   return (
-    <div
+    <motion.div
       className={
-        "main-container grid grid-rows-2 grid-flow-col xl:p-20 lg:16 md:p-16 sm:p-16 xs:p-12"
+        "main-container grid grid-rows-2 grid-flow-col xl:p-20 lg:16 md:p-16 sm:p-16 xs:p-12 overflow-hidden"
       }
     >
       {/* responsiveness  */}
       <div>
         <div className={"flex flex-row justify-between items-center"}>
           <div>
-            <h3
+            <motion.h3
               className={
                 "kreon-font capitalize xl:text-8xl lg:text-7xl md:text-6xl sm:text-4xl xs:text-4xl text-white"
               }
+              initial={{ x: 100 }}
+              animate={{ x: 0 }}
+              transition={{ ease: "easeOut", duration: 1.5, delay: 0.5 }}
             >
               Simple and <br />
               tasty <span style={{ color: "#F96107" }}>recipe</span>
-            </h3>
+            </motion.h3>
           </div>
-          <div>
+          <motion.div
+            initial={{ x: -100, opacity: 0.5 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ ease: "easeOut", duration: 1.5, delay: 0.5 }}
+          >
             {/* Good food, good mood. */}
             <img
               src={logo}
@@ -79,19 +87,29 @@ function MainComponent() {
               }
               alt=""
             />
-          </div>
+          </motion.div>
         </div>
-        <div className={"py-12 xl:w-[40%] lg:w-[50%] px-5"}>
+        <motion.div
+          initial={{ x: -100 }}
+          animate={{ x: 0 }}
+          transition={{ ease: "easeOut", duration: 1.5, delay: 0.5 }}
+          className={"py-12 xl:w-[40%] lg:w-[50%] px-5"}
+        >
           <p className={"dancing-script text-xl text-white pb-3"}>
             <q>{quote.content}</q>
           </p>
           <p className="pacifico text-xl text-white">~{quote.author}</p>
-        </div>
+        </motion.div>
       </div>
       <div className={"kreon-font"}>
-        <h4 className="capitalize text-xl xl:mt-1 sm:text-md xs:text-md text-white xs:-mt-20">
-          Top Trends ....
-        </h4>
+        <motion.h4
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ ease: "easeOut", duration: 1.5, delay: 0.5 }}
+          className="capitalize text-xl xl:mt-1 sm:text-md xs:text-md text-white xs:-mt-20"
+        >
+          Mouth watering recipies ....
+        </motion.h4>
         <div
           className={
             "grid xl:grid-cols-6 xs:grid-cols-1 sm:grid-cols-1 gap-8 xl:px-5 xs:px-1 h-full flex justify-center"
@@ -131,10 +149,10 @@ function MainComponent() {
           </Link>
         </div>
         <div className="md:flex md:justify-center md:items-center h-20 -mt-20 lg:hidden sm:hidden xs:hidden">
-            <Lottie options={defaultArrowOptions} />
+          <Lottie options={defaultArrowOptions} />
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

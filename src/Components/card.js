@@ -3,12 +3,16 @@ import { ReactComponent as Checker } from "../Assets/Icons/checkmark-circle-outl
 import { ReactComponent as Cross } from "../Assets/Icons/close-outline.svg";
 import { ReactComponent as Eye } from "../Assets/Icons/eye-outline.svg";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 function Card({ id, title, image, score, Vegetarian, gluten, time }) {
   return (
-    <div
+    <motion.div
+      initial={{ y: -20 }}
+      animate={{ y: 0 }}
+      transition={{ ease: "easeOut", duration: 1.5, delay: 0.3 }}
       className="bg-white card-style shadow-xl lg:mt-20 xs:mt-7 rounded-lg grid lg:grid-cols-2 
-                    lg:grid-rows-none sm:grid-rows-2 xs:grid-cols-2 border-black lg:h-3/4 lg:w-1/10 md:w-1/10 xs:w-full xs:h-48"
+                    lg:grid-rows-none sm:grid-rows-2 xs:grid-cols-2 border-black lg:h-3/4 lg:w-1/10 md:w-1/10 xs:w-full xs:h-48 overflow-hidden"
     >
       <div className="lg:h-full lg:w-full">
         <img
@@ -33,7 +37,10 @@ function Card({ id, title, image, score, Vegetarian, gluten, time }) {
           <div className="lg:flex lg:justify-around lg:items-center hidden">
             <div>
               <div className="flex justify-center">
-                <div className="bg-green-600 rounded mr-2 mt-1" style={{height: "0.75rem", width: "0.75rem"}} />
+                <div
+                  className="bg-green-600 rounded mr-2 mt-1"
+                  style={{ height: "0.75rem", width: "0.75rem" }}
+                />
                 <div>
                   <h2 className="text-white">Health score</h2>
                   <p className="text-sm text-gray-400">{score}%</p>
@@ -42,7 +49,10 @@ function Card({ id, title, image, score, Vegetarian, gluten, time }) {
             </div>
             <div>
               <div className="flex justify-center">
-                <div className="bg-blue-600 rounded mr-2 mt-1" style={{height: "0.75rem", width: "0.75rem"}}  />
+                <div
+                  className="bg-blue-600 rounded mr-2 mt-1"
+                  style={{ height: "0.75rem", width: "0.75rem" }}
+                />
                 <div>
                   <h2 className="text-white">Cooking time</h2>
                   <p className="text-sm text-gray-400">{time}mins</p>
@@ -95,7 +105,7 @@ function Card({ id, title, image, score, Vegetarian, gluten, time }) {
           </div>
         </Link>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

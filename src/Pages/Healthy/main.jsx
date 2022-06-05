@@ -35,7 +35,7 @@ function MainComponent() {
           <h2 className="w-full my-5 text-6xl capitalize">
             Changing your eating habits ?
           </h2>
-          <p>
+          <p className="imprima-font">
             Always take care of your health starting from the food menu that you
             consume everyday
           </p>
@@ -74,15 +74,15 @@ function MainComponent() {
                 </div>
                 <div className="flex justify-between p-5 kreon-font ">
                   <div>
-                    <p>Calories</p>
+                    <p className="imprima-font">Calories</p>
                     <p className="text-red-700">230</p>
                   </div>
                   <div>
-                    <p>Protein</p>
+                    <p className="imprima-font">Protein</p>
                     <p className="text-green-700">12g</p>
                   </div>
                   <div>
-                    <p>Fat</p>
+                    <p className="imprima-font">Fat</p>
                     <p className="text-red-700">34g</p>
                   </div>
                 </div>
