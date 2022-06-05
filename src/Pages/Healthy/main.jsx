@@ -6,6 +6,7 @@ import { Endpoints } from "../../services/endpoints";
 import { useFetch } from "../../Hooks";
 import * as loadingData from "../../Assets/lottie/lf30_editor_xad43im4.json";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const defaultOptions = {
   loop: true,
@@ -29,20 +30,36 @@ function MainComponent() {
   //   const data = dataObject.data.results[0]
   //   console.log(dataObject.data.results[0]);
   return (
-    <div className="healthy-container grid grid-rows-7">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{opacity: 1}}
+      transition={{ ease: "easeIn", duration: 1, delay: 0.2 }}
+      className="healthy-container grid grid-rows-7"
+    >
       <div className="row-span-6 grid grid-cols-2">
         <div className="p-36 mt-16 kreon-font text-white">
-          <h2 className="w-full my-5 text-6xl capitalize">
-            Changing your eating habits ?
-          </h2>
-          <p className="imprima-font">
-            Always take care of your health starting from the food menu that you
-            consume everyday
-          </p>
+          <motion.div
+            initial={{ x: -100, opacity: 0.5 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ ease: "easeOut", duration: 1.5, delay: 0.2 }}
+          >
+            <h2 className="w-full my-5 text-6xl capitalize">
+              Changing your eating habits ?
+            </h2>
+            <p className="imprima-font">
+              Always take care of your health starting from the food menu that
+              you consume everyday
+            </p>
+          </motion.div>
           <Link to={"/category"}>
-            <div className="flex justify-center items-center ml-3 mt-10 w-1/2 p-5 text-white hover:text-black shadow-2xl hover:bg-red-600 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 cursor-pointer">
-                Explore more content..
-            </div>
+            <motion.div
+              initial={{ y: 50, opacity: 0.5 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ ease: "easeOut", duration: 1.5 }}
+              className="flex justify-center items-center ml-3 mt-10 w-1/2 p-5 text-white hover:text-black shadow-2xl hover:bg-red-600 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 cursor-pointer"
+            >
+              Explore more content..
+            </motion.div>
           </Link>
         </div>
         {dataObject.isLoading ? (
@@ -50,7 +67,10 @@ function MainComponent() {
             <Lottie options={defaultLoadingOptions} />
           </>
         ) : (
-          <div
+          <motion.div
+            initial={{ x: 100 }}
+            animate={{ x: 0 }}
+            transition={{ ease: "easeOut", duration: 1.5, delay: 0.2 }}
             className="flex justify-center items-center mt-44 ml-32"
             style={{ width: "62%", height: "68%" }}
           >
@@ -86,18 +106,16 @@ function MainComponent() {
                     <p className="text-red-700">34g</p>
                   </div>
                 </div>
-                <div className="border-b mt-7">
-
-                </div>
+                <div className="border-b mt-7"></div>
               </div>
             </div>
-          </div>
+          </motion.div>
         )}
       </div>
       <div className="healthy-lottie flex justify-center">
         <Lottie options={defaultOptions} />
       </div>
-    </div>
+    </motion.div>
   );
 }
 

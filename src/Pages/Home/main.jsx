@@ -54,6 +54,8 @@ function MainComponent() {
   };
   return (
     <motion.div
+      exit={{opacity: 0}}
+      transition={{ ease: "easeOut", duration: 1, delay: 0.2 }}
       className={
         "main-container grid grid-rows-2 grid-flow-col xl:p-20 lg:16 md:p-16 sm:p-16 xs:p-12 overflow-hidden"
       }
@@ -68,7 +70,7 @@ function MainComponent() {
               }
               initial={{ x: 100 }}
               animate={{ x: 0 }}
-              transition={{ ease: "easeOut", duration: 1.5, delay: 0.5 }}
+              transition={{ ease: [0.6, 0.01, -0.05, 0.9], duration: 1, delay: 0.2 }}
             >
               Simple and <br />
               tasty <span style={{ color: "#F96107" }}>recipe</span>
@@ -77,7 +79,7 @@ function MainComponent() {
           <motion.div
             initial={{ x: -100, opacity: 0.5 }}
             animate={{ x: 0, opacity: 1 }}
-            transition={{ ease: "easeOut", duration: 1.5, delay: 0.5 }}
+            transition={{ ease: "easeOut", duration: 1, delay: 0.2 }}
           >
             {/* Good food, good mood. */}
             <img
@@ -92,7 +94,7 @@ function MainComponent() {
         <motion.div
           initial={{ x: -100 }}
           animate={{ x: 0 }}
-          transition={{ ease: "easeOut", duration: 1.5, delay: 0.5 }}
+          transition={{ ease: "easeOut", duration: 1, delay: 0.2 }}
           className={"py-12 xl:w-[40%] lg:w-[50%] px-5"}
         >
           <p className={"dancing-script text-xl text-white pb-3"}>
@@ -105,7 +107,7 @@ function MainComponent() {
         <motion.h4
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ ease: "easeOut", duration: 1.5, delay: 0.5 }}
+          transition={{ ease: "easeOut", duration: 1, delay: 0.2 }}
           className="capitalize text-xl xl:mt-1 sm:text-md xs:text-md text-white xs:-mt-20"
         >
           Mouth watering recipies ....

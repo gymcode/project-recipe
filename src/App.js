@@ -8,7 +8,7 @@ import { AnimatePresence } from "framer-motion";
 function App() {
   const location = useLocation();
   return (
-    <AnimatePresence>
+    <AnimatePresence exitBeforeEnter>
       <Routes location={location} key={location.pathname}>
         {RouteComponents.map((data) => (
           <Route path={data.path} element={data.element} />
