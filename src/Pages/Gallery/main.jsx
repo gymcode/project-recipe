@@ -35,6 +35,10 @@ function MainComponent({ data }) {
           </div>
           <motion.div
             whileHover={{ scale: 1.1 }}
+            whileTap={{
+              scale: 0.8,
+              borderRadius: "20%",
+            }}  
             data-aos="zoom-out-up"
             data-aos-offset="500"
             data-aos-duration="3000"
