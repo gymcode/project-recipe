@@ -1,0 +1,6 @@
+.gallery-container{
+    background: url("../../Assets/Images/food pattern.jpg");
+    background-position: center;
+    width: 100vw;
+    height: 100vh;
+}
