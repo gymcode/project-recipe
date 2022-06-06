@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useRef } from "react";
 import "./main.css";
 import * as nextPageLoader from "../../Assets/lottie/lf30_editor_cialu9mk.json";
 import Lottie from "react-lottie";
@@ -7,6 +7,7 @@ import { useFetch } from "../../Hooks";
 import * as loadingData from "../../Assets/lottie/lf30_editor_xad43im4.json";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { GalleryComponent } from "..";
 
 const defaultOptions = {
   loop: true,
@@ -21,30 +22,35 @@ const defaultLoadingOptions = {
 };
 
 function MainComponent() {
+  const gallery = useRef(null);
   const searchEndpoint = `${Endpoints.SEARCH}&diet=vegetarian&number=1`;
   const dataObject = useFetch(
     searchEndpoint,
     { isLoading: true, data: null },
     "vegi_search"
   );
-  //   const data = dataObject.data.results[0]
-  //   console.log(dataObject.data.results[0]);
+  const scrollToSection = (elementRef) => {
+    window.scrollTo({
+      top: elementRef.current.offsetTop,
+      behavior: "smooth",
+    });
+  };
   return (
     <>
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ ease: "easeIn", duration: 1, delay: 0.2 }}
-        className="healthy-container grid grid-rows-7"
+        className="healthy-container grid lg:grid-rows-7 xl:grid-rows-7"
       >
-        <div className="row-span-6 grid grid-cols-2">
-          <div className="p-36 mt-16 kreon-font text-white">
+        <div className="row-span-6 grid xl:grid-cols-2 lg:grid-cols-2 ">
+          <div className="lg:p-36 xl:-36 xs:p-10 sm:p-10 mt-16 kreon-font text-white">
             <motion.div
               initial={{ x: -100, opacity: 0.5 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ ease: "easeOut", duration: 1.5, delay: 0.2 }}
             >
-              <h2 className="w-full my-5 text-6xl capitalize">
+              <h2 className="w-full my-5 lg:text-6xl xl:text-6xl xs:text-5xl capitalize">
                 Changing your eating habits ?
               </h2>
               <p className="imprima-font">
@@ -57,7 +63,7 @@ function MainComponent() {
                 initial={{ y: 50, opacity: 0.5 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ ease: "easeOut", duration: 1.5 }}
-                className="flex justify-center items-center ml-3 mt-10 w-1/2 p-5 text-white hover:text-black shadow-2xl hover:bg-red-600 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 cursor-pointer"
+                className="flex justify-center items-center lg:ml-3 xl:ml-3 mt-10 lg:w-1/2 xl:w-1/2 xs:w-full p-5 text-white hover:text-black shadow-2xl hover:bg-red-600 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 cursor-pointer"
               >
                 Explore more content..
               </motion.div>
@@ -72,7 +78,7 @@ function MainComponent() {
               initial={{ x: 100 }}
               animate={{ x: 0 }}
               transition={{ ease: "easeOut", duration: 1.5, delay: 0.2 }}
-              className="flex justify-center items-center mt-44 ml-32 "
+              className="flex justify-center items-center lg:mt-44 xl:mt-44 xs:mt-10 ml-32 xs:ml-16 "
               style={{ width: "62%", height: "68%" }}
             >
               <div
@@ -113,18 +119,13 @@ function MainComponent() {
             </motion.div>
           )}
         </div>
-        <div className="healthy-lottie flex justify-center">
+        <div onMouseOver={()=> scrollToSection(gallery)} className="healthy-lottie flex justify-center">
           <Lottie options={defaultOptions} />
         </div>
       </motion.div>
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ ease: "easeIn", duration: 1, delay: 0.2 }}
-        className="bg-red-300 h-[100vh]"
-      >
-        dsada
-      </motion.div>
+      <div>
+        <GalleryComponent data={gallery}/>
+      </div>
     </>
   );
 }

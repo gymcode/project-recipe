@@ -48,13 +48,15 @@
 }
 
 ::-webkit-scrollbar{
-  width: 0;
+  width: 0.2rem;
+  height: 0;
 }
-/* 
+
 ::-webkit-scrollbar-track{
-  background: red;
+  background: rgb(128, 128, 128);
 }
 
 ::-webkit-scrollbar-thumb{
-  background: gray;
-} */
+  background: #000;
+  border-radius: 50px;
+}
