@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import "./main.css";
 import * as nextPageLoader from "../../Assets/lottie/lf30_editor_cialu9mk.json";
 import Lottie from "react-lottie";
@@ -6,8 +6,9 @@ import { Endpoints } from "../../services/endpoints";
 import { useFetch } from "../../Hooks";
 import * as loadingData from "../../Assets/lottie/lf30_editor_xad43im4.json";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 import { GalleryComponent } from "..";
+import { useInView } from "react-intersection-observer";
 
 const defaultOptions = {
   loop: true,
@@ -23,6 +24,8 @@ const defaultLoadingOptions = {
 
 function MainComponent() {
   const gallery = useRef(null);
+  const control = useAnimation();
+  const [ref, inView] = useInView();
   const searchEndpoint = `${Endpoints.SEARCH}&diet=vegetarian&number=1`;
   const dataObject = useFetch(
     searchEndpoint,
@@ -35,6 +38,12 @@ function MainComponent() {
       behavior: "smooth",
     });
   };
+
+  useEffect(() => {
+    if (inView) {
+      control.start("visible");
+    }
+  }, [control, inView]);
   return (
     <>
       <motion.div
@@ -119,12 +128,15 @@ function MainComponent() {
             </motion.div>
           )}
         </div>
-        <div onMouseOver={()=> scrollToSection(gallery)} className="healthy-lottie flex justify-center">
+        <div
+          onMouseOver={() => scrollToSection(gallery)}
+          className="healthy-lottie flex justify-center"
+        >
           <Lottie options={defaultOptions} />
         </div>
       </motion.div>
-      <div>
-        <GalleryComponent data={gallery}/>
+      <div ref={gallery}>
+        <GalleryComponent />
       </div>
     </>
   );

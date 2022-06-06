@@ -1,12 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./App.css";
 import { Routes, Route, useLocation } from "react-router-dom";
+import AOS from "aos";
 
 import RouteComponents from "./routes";
 import { AnimatePresence } from "framer-motion";
 
 function App() {
   const location = useLocation();
+  useEffect(() => {
+    AOS.init();
+  }, []);
   return (
     <AnimatePresence exitBeforeEnter>
       <Routes location={location} key={location.pathname}>
