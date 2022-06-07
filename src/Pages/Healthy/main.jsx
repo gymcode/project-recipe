@@ -26,7 +26,7 @@ function MainComponent() {
   const gallery = useRef(null);
   const control = useAnimation();
   const [ref, inView] = useInView();
-  const searchEndpoint = `${Endpoints.SEARCH}&diet=vegetarian&number=1`;
+  const searchEndpoint = `${Endpoints.SEARCH()}&diet=vegetarian&number=1`;
   const dataObject = useFetch(
     searchEndpoint,
     { isLoading: true, data: null },
@@ -79,9 +79,9 @@ function MainComponent() {
             </Link>
           </div>
           {dataObject.isLoading ? (
-            <>
-              <Lottie options={defaultLoadingOptions} />
-            </>
+            <div className="flex items-center justify-center">
+              <Lottie options={defaultLoadingOptions} height={400} width={400} />
+            </div>
           ) : (
             <motion.div
               initial={{ x: 100 }}

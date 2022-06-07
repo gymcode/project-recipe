@@ -4,21 +4,7 @@ import '@splidejs/react-splide/css';
 
 const handleDragStart = (e) => e.preventDefault();
 
-const items = [
-  <div className="bg-red-200">dsdasdasad</div>,
-  <div className="bg-green-200">hello</div>,
-  <div className="bg-blue-200">hey</div>,
-  <div className="bg-yellow-200">thisbise</div>,
-];
-
 const Home = () => {
-  var settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-  };
 
   return (
     <div className="">
@@ -33,7 +19,7 @@ const Home = () => {
           </p>
         </div>
         <div className="w-[38%] ">
-          <img src={CookingFrame} className={"absolute w-[21%] top-3"} alt="" />
+          <img src={CookingFrame} className={"absolute w-[21%] top-[4.4rem]"} alt="" />
         </div>
       </div>
       <div className="my-8">
@@ -62,57 +48,6 @@ const Home = () => {
         <h2 className="kreon-font">
           Let's guess some dishes you'll like to prepare...
         </h2>
-        <Splide aria-label="My Favorite Images" options={{perPage:4, arrows: false}}>
-          <SplideSlide>
-            <div className="bg-red-200 h-40">dsdasdasad</div>,
-          </SplideSlide>
-          <SplideSlide>
-            <div className="bg-red-200">dsdasdasad</div>,
-          </SplideSlide>
-          <SplideSlide>
-            <div className="bg-red-200">dsdasdasad</div>,
-          </SplideSlide>
-          <SplideSlide>
-            <div className="bg-red-200">dsdasdasad</div>,
-          </SplideSlide>
-          <SplideSlide>
-            <div className="bg-red-200">dsdasdasad</div>,
-          </SplideSlide>
-        </Splide>
-        <Splide aria-label="My Favorite Images" options={{perPage:4, arrows: false}}>
-          <SplideSlide>
-            <div className="bg-red-200 h-40">dsdasdasad</div>,
-          </SplideSlide>
-          <SplideSlide>
-            <div className="bg-red-200">dsdasdasad</div>,
-          </SplideSlide>
-          <SplideSlide>
-            <div className="bg-red-200">dsdasdasad</div>,
-          </SplideSlide>
-          <SplideSlide>
-            <div className="bg-red-200">dsdasdasad</div>,
-          </SplideSlide>
-          <SplideSlide>
-            <div className="bg-red-200">dsdasdasad</div>,
-          </SplideSlide>
-        </Splide>
-        <Splide aria-label="My Favorite Images" options={{perPage:4, arrows: false}}>
-          <SplideSlide>
-            <div className="bg-red-200 h-40">dsdasdasad</div>,
-          </SplideSlide>
-          <SplideSlide>
-            <div className="bg-red-200">dsdasdasad</div>,
-          </SplideSlide>
-          <SplideSlide>
-            <div className="bg-red-200">dsdasdasad</div>,
-          </SplideSlide>
-          <SplideSlide>
-            <div className="bg-red-200">dsdasdasad</div>,
-          </SplideSlide>
-          <SplideSlide>
-            <div className="bg-red-200">dsdasdasad</div>,
-          </SplideSlide>
-        </Splide>
         <Splide aria-label="My Favorite Images" options={{perPage:4, arrows: false}}>
           <SplideSlide>
             <div className="bg-red-200 h-40">dsdasdasad</div>,

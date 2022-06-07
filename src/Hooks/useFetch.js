@@ -17,6 +17,7 @@ function useFetch(url, defaultResponse, recipeString){
     async function getDataFromApi(){
         try {
             const api = await fetch(url)
+            console.log(url)
             console.log(api)
             if(api.status !== 200){
                 throw Error

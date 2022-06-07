@@ -26,7 +26,7 @@ function Card({ id, title, image, score, Vegetarian, gluten, time }) {
       </div>
       <div className="h-full w-full lg:p-5 xs:p-2 grid grid-row-5">
         <div className="flex justify-center items-center row-span-3">
-          <h2 className="lg:text-2xl xs:text-md capitalize text-center text-white lg:h-16 md:h-16 xs:h-5">
+          <h2 className="lg:text-2xl xs:text-md capitalize text-center text-gray-800 lg:h-16 md:h-16 xs:h-5">
             {title}
           </h2>
         </div>
@@ -42,8 +42,8 @@ function Card({ id, title, image, score, Vegetarian, gluten, time }) {
                   style={{ height: "0.75rem", width: "0.75rem" }}
                 />
                 <div>
-                  <h2 className="text-white">Health score</h2>
-                  <p className="text-sm text-gray-400">{score}%</p>
+                  <h2 className="text-gray-800">Health score</h2>
+                  <p className="text-sm text-gray-500">{score}%</p>
                 </div>
               </div>
             </div>
@@ -54,14 +54,14 @@ function Card({ id, title, image, score, Vegetarian, gluten, time }) {
                   style={{ height: "0.75rem", width: "0.75rem" }}
                 />
                 <div>
-                  <h2 className="text-white">Cooking time</h2>
-                  <p className="text-sm text-gray-400">{time}mins</p>
+                  <h2 className="text-gray-800">Cooking time</h2>
+                  <p className="text-sm text-gray-500">{time}mins</p>
                 </div>
               </div>
             </div>
           </div>
           <div className="flex lg:flex-row md:flex-row xs:flex-col justify-around items-center">
-            <div className="flex text-white ml-4">
+            <div className="flex text-gray-800 ml-4">
               Vegetarian
               <div>
                 {Vegetarian ? (
@@ -75,7 +75,7 @@ function Card({ id, title, image, score, Vegetarian, gluten, time }) {
                 )}
               </div>
             </div>
-            <div className="flex text-white ml-4">
+            <div className="flex text-gray-800 ml-4">
               Gluten Free
               <div>
                 {gluten ? (

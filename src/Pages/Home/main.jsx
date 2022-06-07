@@ -66,7 +66,7 @@ function MainComponent() {
           <div>
             <motion.h3
               className={
-                "kreon-font capitalize xl:text-8xl lg:text-7xl md:text-6xl sm:text-4xl xs:text-4xl text-white"
+                "kreon-font capitalize xl:text-8xl lg:text-7xl md:text-6xl sm:text-4xl xs:text-4xl text-black"
               }
               initial={{ x: 100 }}
               animate={{ x: 0 }}
@@ -97,10 +97,10 @@ function MainComponent() {
           transition={{ ease: "easeOut", duration: 1, delay: 0.2 }}
           className={"py-12 xl:w-[40%] lg:w-[50%] px-5"}
         >
-          <p className={"dancing-script text-xl text-white pb-3"}>
+          <p className={"dancing-script text-xl text-black pb-3"}>
             <q>{quote.content}</q>
           </p>
-          <p className="pacifico text-xl text-white">~{quote.author}</p>
+          <p className="pacifico text-xl text-black">~{quote.author}</p>
         </motion.div>
       </div>
       <div className={"kreon-font"}>
@@ -108,7 +108,7 @@ function MainComponent() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ ease: "easeOut", duration: 1, delay: 0.2 }}
-          className="capitalize text-xl xl:mt-1 sm:text-md xs:text-md text-white xs:-mt-20"
+          className="capitalize text-xl xl:mt-1 sm:text-md xs:text-md text-black xs:-mt-20"
         >
           Mouth watering recipies ....
         </motion.h4>
@@ -124,8 +124,9 @@ function MainComponent() {
             }
           >
             {dataResponse.isLoading ? (
-              <div>
-                <Lottie options={defaultLoadingOptions} />
+              
+              <div className="flex justify-center items-center">
+                <Lottie options={defaultLoadingOptions}  height={200} width={200} />
               </div>
             ) : (
               dataResponse.data.recipes.map((data) => {
