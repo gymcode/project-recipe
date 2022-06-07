@@ -2,6 +2,7 @@ import "./component.css";
 import CuisineLogo from "../Assets/Images/logo2.svg";
 import { ReactComponent as Home } from "../Assets/Icons/home-outline.svg";
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 const HomeData = {
   id: 7,
@@ -49,7 +50,11 @@ const SideNav = ({ childToParent }) => {
     childToParent(tab);
   }
   return (
-    <nav className="w-auto side-nav-container h-full bg-red-400 xl:block lg:bloxk md:block sm:hidden xs:hidden shadow-xl">
+    <motion.nav
+      initial = {{x: -200}}
+      animate = {{x: 0}}
+      transition={{ ease: [0.6, 0.01, -0.05, 0.9], duration: .5, delay: 0.1 }}
+     className="w-auto side-nav-container h-full bg-red-400 xl:block lg:bloxk md:block sm:hidden xs:hidden shadow-xl">
       <div className="w-auto h-36 pt-8 py-5 flex items-center px-12">
         <img src={CuisineLogo} className="h-[4.5rem]" />
       </div>
@@ -84,7 +89,7 @@ const SideNav = ({ childToParent }) => {
           </div>
         ))}
       </div>
-    </nav>
+    </motion.nav>
   );
 };
 

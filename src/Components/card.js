@@ -98,9 +98,9 @@ function Card({ id, title, image, score, Vegetarian, gluten, time }) {
           >
             <div
               className="border w-10 mt-2 rounded-full flex items-center justify-center"
-              style={{ borderColor: "white", height: "81%" }}
+              style={{ borderColor: "black", height: "81%" }}
             >
-              <Eye height={"1.4rem"} fill="white" />
+              <Eye height={"1.4rem"} fill="black" />
             </div>
           </div>
         </Link>
