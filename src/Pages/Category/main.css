@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Cookie&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Imprima&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cookie&display=swap');
 
 .category-container {
     width: 100vw;
@@ -15,6 +15,10 @@
     content-visibility: visible;
 }
 
+.cookie-font{
+    font-family: 'Cookie', cursive;
+}
+
 .healthy-card-image {
     background-image: url("../../Assets/Images/card2.png");
     background-size: cover;
@@ -23,7 +27,7 @@
 
 .post-header-img{
     background-color: #555555;
-    height: 14rem;
+    height: 13rem;
     background: linear-gradient(348.91deg, #FFE600 -22.93%, rgba(253, 228, 6, 0.968646) -22.91%, rgba(253, 228, 7, 0.963542) -22.9%, #F83F05 53.2%);
 }
 
