@@ -3,6 +3,7 @@ import CuisineLogo from "../Assets/Images/logo2.svg";
 import { ReactComponent as Home } from "../Assets/Icons/home-outline.svg";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const HomeData = {
   id: 7,
@@ -55,9 +56,11 @@ const SideNav = ({ childToParent }) => {
       animate = {{x: 0}}
       transition={{ ease: [0.6, 0.01, -0.05, 0.9], duration: .5, delay: 0.1 }}
      className="w-auto side-nav-container h-full bg-red-400 xl:block lg:bloxk md:block sm:hidden xs:hidden shadow-xl">
-      <div className="w-auto h-36 pt-8 py-5 flex items-center px-12">
-        <img src={CuisineLogo} className="h-[4.5rem]" />
-      </div>
+      <Link to={"/"}>
+        <div className="w-auto h-36 pt-8 py-5 flex items-center px-12">
+          <img src={CuisineLogo} className="h-[4.5rem]" />
+        </div>
+      </Link>
       <div className="px-10">
         <h2 className="capitalize text-sm text-gray-700 pb-2 px-3 font-sans border-b font-extralight">
           Main Dash

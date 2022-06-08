@@ -14,8 +14,9 @@ import * as nextPageLoader from "../../Assets/lottie/lf30_editor_cialu9mk.json";
 
 function MainComponent() {
   const [quote, setQuote] = useState(JsonQuoteData.quote[0]);
+  const random = Endpoints.RANDOM_RECIPES(2)
   const dataResponse = useFetch(
-    Endpoints.RANDOM_RECIPES,
+    random,
     { isLoading: true, data: null },
     "recipe"
   );
@@ -54,6 +55,8 @@ function MainComponent() {
   };
   return (
     <motion.div
+      initial = {{opacity: 0.2}}
+      animate = {{opacity:1}}
       exit={{opacity: 0}}
       transition={{ ease: "easeOut", duration: 1, delay: 0.2 }}
       className={

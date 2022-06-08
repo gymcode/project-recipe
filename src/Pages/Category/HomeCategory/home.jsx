@@ -13,7 +13,14 @@ const Home = () => {
     { isLoading: true, data: null },
     "dashboardrecipe"
   );
-  // const data = dataResponse.data.searchResults[5]
+  const random = Endpoints.RANDOM_RECIPES(5)
+  const response = useFetch(
+    random,
+    { isLoading: true, data: null },
+    "dashboardRandomRecipe"
+  );
+  console.log(response);
+  //prototypes
   return (
     <div className="">
       <motion.div className="grid grid-cols-5 gap-6">
@@ -171,31 +178,24 @@ const Home = () => {
               aria-label="My Favorite Images"
               options={{ perPage: 3, arrows: false }}
             >
-              <SplideSlide>
-                <div className="h-40 mt-10 flex justify-center items-center">
-                  <div className="dash-card w-[85%] h-full rounded-2xl"></div>
-                </div>
-              </SplideSlide>
-              <SplideSlide>
-                <div className="h-40 mt-10 flex justify-center items-center">
-                  <div className=" dash-card w-[85%] h-full rounded-2xl"></div>
-                </div>
-              </SplideSlide>
-              <SplideSlide>
-                <div className="h-40 mt-10 flex justify-center items-center">
-                  <div className=" dash-card w-[85%] h-full rounded-2xl"></div>
-                </div>
-              </SplideSlide>
-              <SplideSlide>
-                <div className="h-40 mt-10 flex justify-center items-center">
-                  <div className=" dash-card w-[85%] h-full rounded-2xl"></div>
-                </div>
-              </SplideSlide>
-              <SplideSlide>
-                <div className="h-40 mt-10 flex justify-center items-center">
-                  <div className=" dash-card w-[85%] h-full rounded-2xl"></div>
-                </div>
-              </SplideSlide>
+            {
+              response.isLoading ? (
+              <>this is me</>
+              ): (
+                response.data.recipes.map((data)=>(
+                  <>
+                    <SplideSlide>
+                      <div className="h-40 mt-10 flex justify-center items-center">
+                        <div className="dash-card w-[85%] h-full rounded-2xl grid grid-cols-5 flex justify-center items-center px-6">
+                          <div style={{ backgroundImage: `url(${data.image})` }} className="col-span-2 h-24 w-24 rounded-full bg-cover bg-center"></div>
+                          <div className="imprima-font col-span-3">{data.title}</div>
+                        </div>
+                      </div>
+                    </SplideSlide>
+                  </>
+                ))
+              )
+            }
             </Splide>
           </motion.div>
         </div>
