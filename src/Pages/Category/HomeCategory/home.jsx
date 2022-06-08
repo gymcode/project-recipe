@@ -5,36 +5,7 @@ import { motion } from "framer-motion";
 import { Endpoints } from "../../../services/endpoints";
 import { useFetch } from "../../../Hooks";
 import { ReactComponent as Eye } from "../../../Assets/Icons/eye-outline.svg";
-
-const data = [
-  {
-    id: "1",
-  },
-  {
-    id: "2",
-  },
-  {
-    id: "3",
-  },
-  {
-    id: "4",
-  },
-  {
-    id: "5",
-  },
-  {
-    id: "6",
-  },
-  {
-    id: "7",
-  },
-  {
-    id: "8",
-  },
-  {
-    id: "9",
-  },
-];
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const dataResponse = useFetch(
@@ -153,27 +124,29 @@ const Home = () => {
                                 </svg>
                                 {item.title}
                               </div>
-                              <div
-                                style={{
-                                  borderTop:
-                                    "1px solid rgba(214, 214, 214, 0.11)",
-                                }}
-                                className="flex justify-end h-full items-center"
-                              >
+                              <Link to={`/recipe/${item.id}`}>
                                 <div
-                                  className="border w-9 mt-2 rounded-full flex items-center justify-center"
                                   style={{
-                                    borderColor: "gray",
-                                    height: "2.3rem",
+                                    borderTop:
+                                      "1px solid rgba(214, 214, 214, 0.11)",
                                   }}
+                                  className="flex justify-end h-full items-center"
                                 >
-                                  <Eye
-                                    height={"1.5rem"}
-                                    width={"1.5rem"}
-                                    fill="gray"
-                                  />
+                                  <div
+                                    className="border w-9 mt-2 rounded-full flex items-center justify-center"
+                                    style={{
+                                      borderColor: "gray",
+                                      height: "2.3rem",
+                                    }}
+                                  >
+                                    <Eye
+                                      height={"1.5rem"}
+                                      width={"1.5rem"}
+                                      fill="gray"
+                                    />
+                                  </div>
                                 </div>
-                              </div>
+                              </Link>
                             </div>
                           </div>
                         </div>
@@ -232,7 +205,9 @@ const Home = () => {
             animate={{ x: 0, opacity: 1 }}
             transition={{ ease: "easeInOut", duration: 0.6, delay: 1.8 }}
             className="mt-12 bg-whitex bg-cover bg-center h-[88%] rounded-2xl cookie-font p-10 text-3xl text-center relative"
-            style={{backgroundImage: `url(${require("../../../Assets/Images/pexels-pixabay-414262.jpg")})`}}
+            style={{
+              backgroundImage: `url(${require("../../../Assets/Images/pexels-pixabay-414262.jpg")})`,
+            }}
           >
             <p>Dessert for the day</p>
             <div className="absolute bottom-0 bg-red-200"></div>
