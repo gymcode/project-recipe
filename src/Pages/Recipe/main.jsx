@@ -33,7 +33,7 @@ function MainComponent() {
           animate={{ opacity: 1 }}
           exit = {{opacity: 0}}
           transition={{ ease: "easeIn", duration: 1, delay: 0.2 }}
-           className="recipe-container grid lg:grid-cols-2 xl:grid-cols-2 sm:grid-cols-none xs:grid-cols-none overflow-hidden">
+           className="recipe-container grid lg:grid-cols-2 xl:grid-cols-2 sm:grid-cols-none xs:grid-cols-none">
             <>
               <div>
                 <motion.div

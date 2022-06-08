@@ -87,8 +87,7 @@ function MainComponent() {
               initial={{ x: 100 }}
               animate={{ x: 0 }}
               transition={{ ease: "easeOut", duration: 1.5, delay: 0.2 }}
-              className="flex justify-center items-center lg:mt-44 xl:mt-44 xs:mt-10 ml-32 xs:ml-16 "
-              style={{ width: "62%", height: "68%" }}
+              className="flex justify-center items-center lg:mt-44 xl:mt-44 xs:mt-10 ml-32 xs:ml-16 w-[62%] h-[68%] xs:w-[70%] sm:h-[70%] xs:w-[70%] sm:h-[70%]"
             >
               <div
                 className="bg-white h-full rounded-lg shadow-2xl grid grid-rows-2"
@@ -108,7 +107,7 @@ function MainComponent() {
                       {dataObject.data.results[0].title}
                     </p>
                   </div>
-                  <div className="flex justify-between p-5 kreon-font ">
+                  <div className="flex justify-between p-5 kreon-font">
                     <div>
                       <p className="imprima-font">Calories</p>
                       <p className="text-red-700">230</p>
@@ -130,7 +129,7 @@ function MainComponent() {
         </div>
         <div
           onMouseOver={() => scrollToSection(gallery)}
-          className="healthy-lottie flex justify-center"
+          className="healthy-lottie flex justify-center sm:hidden xs:hidden lg:block"
         >
           <Lottie options={defaultOptions} />
         </div>
