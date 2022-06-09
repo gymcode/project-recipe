@@ -11,17 +11,19 @@ const Modal = ({ visible, toggle, children, height, width, header }) =>
           <ModalContent height={height} width={width} className="flex flex-col">
             {/* modal header  */}
             <div className="border-b h-16 flex-none flex justify-between items-center px-3">
-              <div>{header}</div>
+              <div className="kreon-font">{header}</div>
               <span onClick={toggle}>
                 <Cross height={"1.5rem"} />
               </span>
             </div>
             {/* modal body */}
-            <div className="flex-3 h-5/6">{children}</div>
+            <div className="flex-3 h-5/6 overflow-y-auto">
+              {children}
+            </div>
             {/* modal footer */}
             <div className="border-t h-16 flex-none flex justify-end items-center px-3">
               <button
-                className="py-2 px-8"
+                className="py-2 px-8 kreon-font"
                 style={{ background: "#F96107" }}
                 onClick={toggle}
               >

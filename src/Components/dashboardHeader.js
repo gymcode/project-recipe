@@ -36,7 +36,7 @@ const DashboardHeader = ({ children, percentage, menus, views, bookmarks }) => {
                 <Menu height={"3.2rem"} fill={"#69FF51"} />
               </div>
               <div className="flex flex-col items-center px-4">
-                <div className="kreon-font text-sm text-gray-500">
+                <div className="kreon-font text-sm  ">
                   Total Menus
                 </div>
                 <div className="text-3xl font-bold text-[#69FF51]">{menus}</div>

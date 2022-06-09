@@ -53,6 +53,12 @@ function MainComponent() {
     autoplay: true,
     animationData: loadingData,
   };
+
+    let trimString = function (string, length) {
+    return string.length > length ? 
+           string.substring(0, length) + '...' :
+           string;
+  };
   return (
     <motion.div
       initial = {{opacity: 0.2}}

@@ -6,6 +6,11 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
 function Card({ id, title, image, score, Vegetarian, gluten, time }) {
+  let trimString = function (string, length) {
+    return string.length > length ? 
+           string.substring(0, length) + '...' :
+           string;
+  };
   return (
     <motion.div
       initial={{ y: -20 }}
@@ -27,7 +32,7 @@ function Card({ id, title, image, score, Vegetarian, gluten, time }) {
       <div className="h-full w-full lg:p-5 xs:p-2 grid grid-row-5">
         <div className="flex justify-center items-center row-span-3">
           <h2 className="lg:text-2xl xs:text-md capitalize text-center text-gray-800 lg:h-16 md:h-16 xs:h-5">
-            {title}
+            {trimString(title, 30)}
           </h2>
         </div>
         <div

@@ -62,7 +62,7 @@ const SideNav = ({ childToParent }) => {
         </div>
       </Link>
       <div className="px-10">
-        <h2 className="capitalize text-sm text-gray-700 pb-2 px-3 font-sans border-b font-extralight">
+        <h2 className="imprima-font capitalize text-sm text-gray-700 pb-2 px-3 font-sans border-b font-extralight">
           Main Dash
         </h2>
         <div
@@ -72,11 +72,11 @@ const SideNav = ({ childToParent }) => {
           <div className="pr-5">
             <Home height={"1.6rem"} fill={"#555555"} />
           </div>
-          <div className="rubik font-medium">Home</div>
+          <div className="imprima-font font-medium">Home</div>
         </div>
       </div>
       <div className="px-10 mt-6">
-        <h2 className="capitalize text-sm text-gray-700 pb-2 px-3 font-sans border-b font-extralight">
+        <h2 className="imprima-font capitalize text-sm text-gray-700 pb-2 px-3 font-sans border-b font-extralight">
           Diet Categories
         </h2>
         {NavigationControl.map((data) => (
@@ -88,7 +88,7 @@ const SideNav = ({ childToParent }) => {
             <div className="pr-5">
               <img src={data.svg.default} className="h-7 text-yellow-300" />
             </div>
-            <div className="rubik font-medium">{data.name}</div>
+            <div className="imprima-font font-medium">{data.name}</div>
           </div>
         ))}
       </div>

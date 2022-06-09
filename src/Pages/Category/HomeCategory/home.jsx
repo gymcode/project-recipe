@@ -13,13 +13,18 @@ const Home = () => {
     { isLoading: true, data: null },
     "dashboardrecipe"
   );
-  const random = Endpoints.RANDOM_RECIPES(5)
+  const random = Endpoints.RANDOM_RECIPES(5);
   const response = useFetch(
     random,
     { isLoading: true, data: null },
     "dashboardRandomRecipe"
   );
   console.log(response);
+  let trimString = function (string, length) {
+    return string.length > length
+      ? string.substring(0, length) + "..."
+      : string;
+  };
   //prototypes
   return (
     <div className="">
@@ -56,11 +61,8 @@ const Home = () => {
             backgroundImage: `url(${require("../../../Assets/Images/pexels-mathias-reding-11739092.jpg")})`,
           }}
         >
-          <div className=" p-10 text-black">
-            <h2 className="text-4xl kreon-font py-3 text-white">
-              @Haute Wines...
-            </h2>
-            <motion.p className="text-base text-red-600 kreon-font">
+          <div className=" p-10 text-black flex items-center">
+            <motion.p className="text-xl text-white imprima-font">
               coming soon........
             </motion.p>
           </div>
@@ -108,12 +110,12 @@ const Home = () => {
                     <>
                       <SplideSlide>
                         <div className="h-44 mt-20 flex justify-center items-center">
-                          <div className="dash-card w-[85%] h-full rounded-2xl">
+                          <div className="dash-card w-[85%] h-full rounded-2xl ">
                             <div
                               className="absolute bg-cover bg-center h-32 w-32 bg-yellow-200 top-[1rem] left-[4.5rem] shadow-xl rounded-full"
                               style={{ backgroundImage: `url(${item.image})` }}
                             />
-                            <div className="mt-16 p-6 flex justify-between items-end">
+                            <div className="mt-16 p-6 h-28 flex justify-between items-end ">
                               <div className="imprima-font">
                                 <svg
                                   xmlns="http://www.w3.org/2000/svg"
@@ -129,7 +131,7 @@ const Home = () => {
                                     d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"
                                   />
                                 </svg>
-                                {item.title}
+                                {trimString(item.title, 35)}
                               </div>
                               <Link to={`/recipe/${item.id}`}>
                                 <div
@@ -178,24 +180,27 @@ const Home = () => {
               aria-label="My Favorite Images"
               options={{ perPage: 3, arrows: false }}
             >
-            {
-              response.isLoading ? (
-              <>this is me</>
-              ): (
-                response.data.recipes.map((data)=>(
+              {response.isLoading ? (
+                <>this is me</>
+              ) : (
+                response.data.recipes.map((data) => (
                   <>
                     <SplideSlide>
-                      <div className="h-40 mt-10 flex justify-center items-center">
+                      <div className="h-40 mt-10 flex justify-center items-center ">
                         <div className="dash-card w-[85%] h-full rounded-2xl grid grid-cols-5 flex justify-center items-center px-6">
-                          <div style={{ backgroundImage: `url(${data.image})` }} className="col-span-2 h-24 w-24 rounded-full bg-cover bg-center"></div>
-                          <div className="imprima-font col-span-3">{data.title}</div>
+                          <div
+                            style={{ backgroundImage: `url(${data.image})` }}
+                            className="col-span-2 h-24 w-24 rounded-full bg-cover bg-center"
+                          ></div>
+                          <div className="imprima-font col-span-3">
+                            {trimString(data.title, 40)}
+                          </div>
                         </div>
                       </div>
                     </SplideSlide>
                   </>
                 ))
-              )
-            }
+              )}
             </Splide>
           </motion.div>
         </div>
@@ -204,7 +209,7 @@ const Home = () => {
             initial={{ x: 100, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ ease: "easeInOut", duration: 0.6, delay: 1.8 }}
-            className="mt-12 bg-whitex bg-cover bg-center h-[88%] rounded-2xl cookie-font p-10 text-3xl text-center relative"
+            className="mt-12 bg-whitex bg-cover bg-center h-[88%] rounded-2xl kreon-font p-10 text-3xl text-center relative"
             style={{
               backgroundImage: `url(${require("../../../Assets/Images/pexels-pixabay-414262.jpg")})`,
             }}
