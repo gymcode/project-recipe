@@ -32,7 +32,7 @@ function Card({ id, title, image, score, Vegetarian, gluten, time }) {
       <div className="h-full w-full lg:p-5 xs:p-2 grid grid-row-5">
         <div className="flex justify-center items-center row-span-3">
           <h2 className="lg:text-2xl xs:text-md capitalize text-center text-gray-800 lg:h-16 md:h-16 xs:h-5">
-            {trimString(title, 30)}
+            {trimString(title, 40)}
           </h2>
         </div>
         <div
