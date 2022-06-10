@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Imprima&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cookie&display=swap');
+
+.side-nav-container{
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.08) 0%, rgba(196, 196, 196, 0) 100%);
+    backdrop-filter: blur(50px);
+}
+
+.category-container {
+    width: 100vw;
+    height: 100vh;
+}
+
+.healthy-lottie{
+    width: 5rem;
+    height: 5rem;
+    transform: translate3d(57rem, 30px, 0px);
+    content-visibility: visible;
+}
+
+.cookie-font{
+    font-family: 'Cookie', cursive;
+}
+
+.healthy-card-image {
+    background-image: url("../../Assets/Images/card2.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.post-header-img{
+    background-color: #555555;
+    height: 13rem;
+    background: linear-gradient(348.91deg, #FFE600 -22.93%, rgba(253, 228, 6, 0.968646) -22.91%, rgba(253, 228, 7, 0.963542) -22.9%, #F83F05 53.2%);
+}
+
+
+.category-background{
+    background-color: #ffffff;
+    background-image: url("https://www.transparenttextures.com/patterns/concrete-wall.png");
+    backdrop-filter: blur(50px);
+}
+
+.dash-card{
+    background: linear-gradient(145.63deg, rgba(134, 134, 134, 0.4) -87.29%, rgba(201, 201, 201, 0) 167.05%, rgba(252, 252, 252, 0.128) 167.05%);
+}
