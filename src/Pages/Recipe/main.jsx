@@ -154,7 +154,7 @@ function MainComponent() {
             <Modal
               visible={visible}
               toggle={toggle}
-              header={"Extended Ingredients"}
+              header={"Ingredients"}
             >
               {!dataObject.isLoading ? (
                 <>
