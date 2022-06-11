@@ -1,5 +1,5 @@
-import { Fragment, useState } from 'react'
-import { Dialog, Menu, Transition } from '@headlessui/react'
+import { Fragment, useState } from "react";
+import { Dialog, Menu, Transition } from "@headlessui/react";
 import {
   BellIcon,
   CalendarIcon,
@@ -10,36 +10,50 @@ import {
   MenuAlt2Icon,
   UsersIcon,
   XIcon,
-} from '@heroicons/react/outline'
-import { SearchIcon } from '@heroicons/react/solid'
-import "./main.css"
+} from "@heroicons/react/outline";
+import { SearchIcon } from "@heroicons/react/solid";
+import "./main.css";
+import CuisineLogo from "../../Assets/Images/logo2.svg";
 
 const navigation = [
-  { name: 'Home', href: '/', icon: HomeIcon, current: true },
-  { name: 'Pescaterian', href: '/pescaterian', icon: UsersIcon, current: false },
-  { name: 'Omnivore', href: '/omnivore', icon: FolderIcon, current: false },
-  { name: 'Vegetarian', href: '/vegetarian', icon: CalendarIcon, current: false },
-  { name: 'Fruitarian', href: '/fruitarian', icon: InboxIcon, current: false },
-  { name: 'Paleo', href: '/paleo', icon: ChartBarIcon, current: false },
-  { name: 'Vegan', href: '/vegan', icon: ChartBarIcon, current: false },
-]
+  {
+    name: "Pescaterian",
+    href: "#",
+    icon: UsersIcon,
+    current: true,
+  },
+  { name: "Omnivore", href: "#", icon: FolderIcon, current: false },
+  {
+    name: "Vegetarian",
+    href: "#",
+    icon: CalendarIcon,
+    current: false,
+  },
+  { name: "Fruitarian", href: "#", icon: InboxIcon, current: false },
+  { name: "Paleo", href: "#", icon: ChartBarIcon, current: false },
+  { name: "Vegan", href: "#", icon: ChartBarIcon, current: false },
+];
 const userNavigation = [
-  { name: 'Your Profile', href: '#' },
-  { name: 'Settings', href: '#' },
-  { name: 'Sign out', href: '#' },
-]
+  { name: "Your Profile", href: "#" },
+  { name: "Settings", href: "#" },
+  { name: "Sign out", href: "#" },
+];
 
 function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
+  return classes.filter(Boolean).join(" ");
 }
 
 export default function Example() {
-  const [sidebarOpen, setSidebarOpen] = useState(false)
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
     <div className="h-screen flex overflow-hidden bg-gray-100">
       <Transition.Root show={sidebarOpen} as={Fragment}>
-        <Dialog as="div" className="fixed inset-0 flex z-40 md:hidden" onClose={setSidebarOpen}>
+        <Dialog
+          as="div"
+          className="fixed inset-0 flex z-40 md:hidden"
+          onClose={setSidebarOpen}
+        >
           <Transition.Child
             as={Fragment}
             enter="transition-opacity ease-linear duration-300"
@@ -95,11 +109,16 @@ export default function Example() {
                       key={item.name}
                       href={item.href}
                       className={classNames(
-                        item.current ? 'bg-indigo-800 text-white' : 'text-indigo-100 hover:bg-indigo-600',
-                        'group flex items-center px-2 py-2 text-base font-medium rounded-md'
+                        item.current
+                          ? "bg-indigo-800 text-white"
+                          : "text-indigo-100 hover:bg-indigo-600",
+                        "group flex items-center px-2 py-2 text-base font-medium rounded-md"
                       )}
                     >
-                      <item.icon className="mr-4 flex-shrink-0 h-6 w-6 text-indigo-300" aria-hidden="true" />
+                      <item.icon
+                        className="mr-4 flex-shrink-0 h-6 w-6 text-indigo-300"
+                        aria-hidden="true"
+                      />
                       {item.name}
                     </a>
                   ))}
@@ -114,32 +133,56 @@ export default function Example() {
       </Transition.Root>
 
       {/* Static sidebar for desktop */}
-      <div className="hidden side-nav-container md:flex md:flex-shrink-0">
-        <div className="flex flex-col w-64">
+      <div className="hidden side-nav-container md:flex md:flex-shrink-0 shadow-xl ">
+        <div className="flex flex-col w-68">
           {/* Sidebar component, swap this element with another sidebar if you like */}
           <div className="flex flex-col flex-grow pt-5 pb-4 overflow-y-auto">
-            <div className="flex items-center flex-shrink-0 px-4">
+            <div className="flex items-center flex-shrink-0 px-4 pt-6">
               <img
-                className="h-8 w-auto"
-                src="https://tailwindui.com/img/logos/workflow-logo-indigo-300-mark-white-text.svg"
+                className="h-[3rem] px-10 w-auto"
+                src={CuisineLogo}
                 alt="Workflow"
               />
             </div>
             <div className="mt-5 flex-1 flex flex-col">
-              <nav className="flex-1 px-2 space-y-1">
-                {navigation.map((item) => (
-                  <a
-                    key={item.name}
-                    href={item.href}
-                    className={classNames(
-                      item.current ? 'bg-indigo-800 text-white' : 'text-indigo-100 hover:bg-indigo-600',
-                      'group flex items-center px-2 py-2 text-sm font-medium rounded-md'
-                    )}
+              <nav className="flex-1 px-7 space-y-1">
+                <div className="pt-10">
+                  <h2 className="imprima-font capitalize text-sm text-gray-700 pb-2 px-3 font-sans border-b font-extralight">
+                    Main Dash
+                  </h2>
+                  <div
+                    // onClick={() => click(HomeData)}
+                    className="flex h-12 items-center my-1 px-3 text-gray-800 hover:rounded-lg hover:bg-[#FFE0D6] hover:text-[#F83F05] hover:shadow-sm hover:transition hover:delay-150 hover:duration-300 hover:ease-in-out cursor-pointer"
                   >
-                    <item.icon className="mr-3 flex-shrink-0 h-6 w-6 text-indigo-300" aria-hidden="true" />
-                    {item.name}
-                  </a>
-                ))}
+                    <div className="pr-5">
+                      {/* <Home height={"1.6rem"} fill={"#555555"} /> */}
+                    </div>
+                    <div className="imprima-font font-medium">Home</div>
+                  </div>
+                </div>
+                <div className="imprima-font">
+                  <h2 className="capitalize text-sm text-gray-700 pb-2 px-3 font-sans border-b font-extralight">
+                    Diet Categories
+                  </h2>
+                  {navigation.map((item) => (
+                    <a
+                      key={item.name}
+                      href={item.href}
+                      className={classNames(
+                        item.current
+                          ? " ring-0 bg-[#FFE0D6] text-black"
+                          : "text-black hover:bg-[#FFE0D6]",
+                        "group flex items-center px-4 py-2 h-12 mt-5 my-1 text-sm font-medium rounded-md"
+                      )}
+                    >
+                      <item.icon
+                        className="mr-3 flex-shrink-0 h-6 w-6 text-black"
+                        aria-hidden="true"
+                      />
+                      {item.name}
+                    </a>
+                  ))}
+                </div>
               </nav>
             </div>
           </div>
@@ -211,7 +254,10 @@ export default function Example() {
                         {({ active }) => (
                           <a
                             href={item.href}
-                            className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
+                            className={classNames(
+                              active ? "bg-gray-100" : "",
+                              "block px-4 py-2 text-sm text-gray-700"
+                            )}
                           >
                             {item.name}
                           </a>
@@ -226,9 +272,11 @@ export default function Example() {
         </div>
 
         <main className="flex-1 relative overflow-y-auto focus:outline-none">
-          <div className="py-6 bg-red-300">
+          <div className="py-6">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
-              <h1 className="text-2xl font-semibold text-gray-900">Dashboard</h1>
+              <h1 className="text-2xl font-semibold text-gray-900">
+                Dashboard
+              </h1>
             </div>
             <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
               {/* Replace with your content */}
@@ -241,5 +289,5 @@ export default function Example() {
         </main>
       </div>
     </div>
-  )
+  );
 }
