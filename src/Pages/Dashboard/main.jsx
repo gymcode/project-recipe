@@ -18,7 +18,7 @@ import CuisineLogo from "../../Assets/Images/logo2.svg";
 const navigation = [
   {
     name: "Pescaterian",
-    href: "#",
+    href: "/dashboard/home",
     icon: UsersIcon,
     current: true,
   },
