@@ -15,34 +15,60 @@ import { SearchIcon } from "@heroicons/react/solid";
 import "./main.css";
 import CuisineLogo from "../../Assets/Images/logo2.svg";
 import { Routes, Route } from "react-router-dom";
+
+// sub dashboards
 import HomeCategory from "../Dashboard/HomeCategory/home";
+import Pescaterian from "../Dashboard/Pescaterian/pescaterian";
+import Fruitarian from "../Dashboard/Fruitarian/fruitarian";
+import Vegan from "../Dashboard/Vegan/vegan";
+import Vegetarian from "../Dashboard/Vegetarian/vegetarian";
+import Paleo from "../Dashboard/Paleo/paleo";
+import Omnivore from "../Dashboard/Omnivore/omnivore";
 
 const navigation = [
   {
     name: "Pescaterian",
-    href: "/dashboard/home",
+    href: "/dashboard/pescaterian",
     icon: UsersIcon,
     current: false,
   },
-  { name: "Omnivore", href: "#", icon: FolderIcon, current: false },
+  {
+    name: "Omnivore",
+    href: "/dashboard/omnivore",
+    icon: FolderIcon,
+    current: false,
+  },
   {
     name: "Vegetarian",
-    href: "#",
+    href: "/dashboard/vegetarian",
     icon: CalendarIcon,
     current: false,
   },
-  { name: "Fruitarian", href: "#", icon: InboxIcon, current: false },
-  { name: "Paleo", href: "#", icon: ChartBarIcon, current: false },
-  { name: "Vegan", href: "#", icon: ChartBarIcon, current: false },
-];
-const subNavigation = [
   {
-    name: "Home",
-    href: "/dashboard/home",
-    icon: UsersIcon,
-    current: true,
+    name: "Fruitarian",
+    href: "/dashboard/fruitarian",
+    icon: InboxIcon,
+    current: false,
+  },
+  {
+    name: "Paleo",
+    href: "/dashboard/paleo",
+    icon: ChartBarIcon,
+    current: false,
+  },
+  {
+    name: "Vegan",
+    href: "/dashboard/vegan",
+    icon: ChartBarIcon,
+    current: false,
   },
 ];
+const subNavigation = {
+  name: "Home",
+  href: "/dashboard",
+  icon: HomeIcon,
+  current: true,
+};
 const userNavigation = [
   { name: "Your Profile", href: "#" },
   { name: "Settings", href: "#" },
@@ -160,15 +186,16 @@ export default function Example() {
                   <h2 className="imprima-font capitalize text-sm text-gray-700 pb-2 px-3 font-sans border-b font-extralight">
                     Main Dash
                   </h2>
-                  <div
-                    // onClick={() => click(HomeData)}
+                  <a
+                    href={subNavigation.href}
                     className="flex h-12 items-center my-1 px-3 text-gray-800 hover:rounded-lg hover:bg-[#FFE0D6] hover:text-[#F83F05] hover:shadow-sm hover:transition hover:delay-150 hover:duration-300 hover:ease-in-out cursor-pointer"
                   >
-                    <div className="pr-5">
-                      {/* <Home height={"1.6rem"} fill={"#555555"} /> */}
-                    </div>
+                    <HomeIcon
+                      className="mr-4 flex-shrink-0 h-6 w-6 text-gray-600"
+                      aria-hidden="true"
+                    />
                     <div className="imprima-font font-medium">Home</div>
-                  </div>
+                  </a>
                 </div>
                 <div className="imprima-font">
                   <h2 className="capitalize text-sm text-gray-700 pb-2 px-3 font-sans border-b font-extralight">
@@ -289,13 +316,13 @@ export default function Example() {
               <div className="py-4">
                 {/* <div className="border-4 border-dashed border-gray-200 rounded-lg h-96" /> */}
                 <Routes>
-                  <Route path="/home" element={<HomeCategory />}/>
-                  <Route path="/pescaterian" element={<HomeCategory />}/>
-                  <Route path="/onmivore" element={<HomeCategory />}/>
-                  <Route path="/vegetarian" element={<HomeCategory />}/>
-                  <Route path="/Fruitarian" element={<HomeCategory />}/>
-                  <Route path="/Paleo" element={<HomeCategory />}/>
-                  <Route path="/Paleo" element={<HomeCategory />}/>
+                  <Route path="/" element={<HomeCategory />} />
+                  <Route path="/pescaterian" element={<Pescaterian />} />
+                  <Route path="/omnivore" element={<Omnivore />} />
+                  <Route path="/vegetarian" element={<Vegetarian />} />
+                  <Route path="/Fruitarian" element={<Fruitarian />} />
+                  <Route path="/Paleo" element={<Paleo />} />
+                  <Route path="/vegan" element={<Vegan />} />
                 </Routes>
               </div>
               {/* /End replace */}
