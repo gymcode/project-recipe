@@ -33,7 +33,7 @@ const Home = () => {
           initial={{ x: -100, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ ease: "easeInOut", duration: 0.5, delay: 1 }}
-          className="post-header-img rounded-2xl flex col-span-3"
+          className="post-header-img rounded-2xl flex col-span-3 relative"
         >
           <div className="w-[62%] p-10 text-white">
             <h2 className="text-5xl kreon-font py-3">Hey there,</h2>
@@ -44,10 +44,10 @@ const Home = () => {
               velit, saepe quaerat.
             </p>
           </div>
-          <div className="w-[38%] ">
+          <div className="w-[92rem] absolute -top-[4.2rem] left-[40rem]">
             <img
               src={CookingFrame}
-              className={"absolute w-[19%] top-[1.9rem]"}
+              className={"absolute w-[19%]"}
               alt=""
             />
           </div>
@@ -110,7 +110,7 @@ const Home = () => {
                     <>
                       <SplideSlide>
                         <div className="h-44 mt-20 flex justify-center items-center">
-                          <div className="dash-card w-[85%] h-full rounded-2xl ">
+                          <div className="dash-card w-[85%] h-full rounded-2xl shadow-sm">
                             <div
                               className="absolute bg-cover bg-center h-32 w-32 bg-yellow-200 top-[1rem] left-[4.5rem] shadow-xl rounded-full"
                               style={{ backgroundImage: `url(${item.image})` }}

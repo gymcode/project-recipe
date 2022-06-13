@@ -39,5 +39,5 @@
 }
 
 .dash-card{
-    background: linear-gradient(145.63deg, rgba(134, 134, 134, 0.4) -87.29%, rgba(201, 201, 201, 0) 167.05%, rgba(252, 252, 252, 0.128) 167.05%);
+    background: linear-gradient(145.63deg, rgb(196, 196, 196) -87.29%, rgb(211, 211, 211) 167.05%, rgb(252, 252, 252) 167.05%);
 }
