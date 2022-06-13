@@ -15,14 +15,14 @@ import { SearchIcon } from "@heroicons/react/solid";
 import "./main.css";
 import CuisineLogo from "../../Assets/Images/logo2.svg";
 import { Routes, Route } from "react-router-dom";
-import HomeCategory from "../Category/HomeCategory/home"
+import HomeCategory from "../Dashboard/HomeCategory/home";
 
 const navigation = [
   {
     name: "Pescaterian",
     href: "/dashboard/home",
     icon: UsersIcon,
-    current: true,
+    current: false,
   },
   { name: "Omnivore", href: "#", icon: FolderIcon, current: false },
   {
@@ -34,6 +34,14 @@ const navigation = [
   { name: "Fruitarian", href: "#", icon: InboxIcon, current: false },
   { name: "Paleo", href: "#", icon: ChartBarIcon, current: false },
   { name: "Vegan", href: "#", icon: ChartBarIcon, current: false },
+];
+const subNavigation = [
+  {
+    name: "Home",
+    href: "/dashboard/home",
+    icon: UsersIcon,
+    current: true,
+  },
 ];
 const userNavigation = [
   { name: "Your Profile", href: "#" },
@@ -275,14 +283,19 @@ export default function Example() {
 
         <main className="flex-1 relative overflow-y-auto focus:outline-none">
           <div className="py-6">
-            <div className=" mx-auto sm:px-6 md:px-8">
-            </div>
+            <div className=" mx-auto sm:px-6 md:px-8"></div>
             <div className=" mx-auto sm:px-6 md:px-8">
               {/* Replace with your content */}
               <div className="py-4">
                 {/* <div className="border-4 border-dashed border-gray-200 rounded-lg h-96" /> */}
                 <Routes>
-                  <Route path="/home" element={<HomeCategory/>}/>
+                  <Route path="/home" element={<HomeCategory />}/>
+                  <Route path="/pescaterian" element={<HomeCategory />}/>
+                  <Route path="/onmivore" element={<HomeCategory />}/>
+                  <Route path="/vegetarian" element={<HomeCategory />}/>
+                  <Route path="/Fruitarian" element={<HomeCategory />}/>
+                  <Route path="/Paleo" element={<HomeCategory />}/>
+                  <Route path="/Paleo" element={<HomeCategory />}/>
                 </Routes>
               </div>
               {/* /End replace */}
