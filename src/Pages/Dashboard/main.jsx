@@ -182,7 +182,7 @@ export default function Example() {
             </div>
             <div className="mt-5 flex-1 flex flex-col">
               <nav className="flex-1 px-7 space-y-1">
-                <div className="pt-10">
+                <div className="pt-10 border-b border-gray-300">
                   <h2 className="imprima-font capitalize text-sm text-gray-700 pb-2 px-3 font-sans border-b font-extralight">
                     Main Dash
                   </h2>
@@ -198,7 +198,7 @@ export default function Example() {
                   </a>
                 </div>
                 <div className="imprima-font">
-                  <h2 className="capitalize text-sm text-gray-700 pb-2 px-3 font-sans border-b font-extralight">
+                  <h2 className="imprima-font capitalize text-sm text-gray-700 pb-2 px-3 mt-4 font-sans border-b font-extralight">
                     Diet Categories
                   </h2>
                   {navigation.map((item) => (
@@ -209,7 +209,7 @@ export default function Example() {
                         item.current
                           ? " ring-0 bg-[#FFE0D6] text-black"
                           : "text-black hover:bg-[#FFE0D6]",
-                        "group flex items-center px-4 py-2 h-12 mt-5 my-1 text-sm font-medium rounded-md"
+                        "group flex items-center px-4 py-2 h-12 mt-4 my-1 text-sm font-medium rounded-md"
                       )}
                     >
                       <item.icon
