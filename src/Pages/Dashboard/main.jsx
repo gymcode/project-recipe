@@ -16,6 +16,15 @@ import "./main.css";
 import CuisineLogo from "../../Assets/Images/logo2.svg";
 import { Routes, Route } from "react-router-dom";
 
+//svgs
+import {ReactComponent as Fish } from "../../Assets/Images/koi-fish.svg"
+import {ReactComponent as Protein} from "../../Assets/Images/proteins.svg"
+import {ReactComponent as Carrot} from "../../Assets/Images/carrot.svg"
+import {ReactComponent as Fruit} from "../../Assets/Images/fruits.svg"
+import {ReactComponent as Nut} from "../../Assets/Images/nuts.svg"
+import {ReactComponent as Brocolli} from "../../Assets/Images/broccoli.svg"
+
+
 // sub dashboards
 import HomeCategory from "../Dashboard/HomeCategory/home";
 import Pescaterian from "../Dashboard/Pescaterian/pescaterian";
@@ -29,25 +38,25 @@ const navigation = [
   {
     name: "Pescaterian",
     href: "/dashboard/pescaterian",
-    icon: UsersIcon,
-    current: false,
+    icon: Fish,
+    current: true,
   },
   {
     name: "Omnivore",
     href: "/dashboard/omnivore",
-    icon: FolderIcon,
+    icon: Protein,
     current: false,
   },
   {
     name: "Vegetarian",
     href: "/dashboard/vegetarian",
-    icon: CalendarIcon,
+    icon: Carrot,
     current: false,
   },
   {
     name: "Fruitarian",
     href: "/dashboard/fruitarian",
-    icon: InboxIcon,
+    icon: Fruit,
     current: false,
   },
   {
@@ -213,7 +222,7 @@ export default function Example() {
                       )}
                     >
                       <item.icon
-                        className="mr-3 flex-shrink-0 h-6 w-6 text-black"
+                        className="mr-3 flex-shrink-0 h-6 w-6 text-gray-600"
                         aria-hidden="true"
                       />
                       {item.name}
