@@ -38,7 +38,7 @@ const navigation = [
   {
     name: "Pescaterian",
     href: "/dashboard/pescaterian",
-    icon: Fish,
+    // icon: Fish,
     current: true,
   },
   {
