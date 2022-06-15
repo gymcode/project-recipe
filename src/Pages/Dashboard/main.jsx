@@ -38,25 +38,25 @@ const navigation = [
   {
     name: "Pescaterian",
     href: "/dashboard/pescaterian",
-    // icon: Fish,
+    icon: ChartBarIcon,
     current: true,
   },
   {
     name: "Omnivore",
     href: "/dashboard/omnivore",
-    icon: Protein,
+    icon: ChartBarIcon,
     current: false,
   },
   {
     name: "Vegetarian",
     href: "/dashboard/vegetarian",
-    icon: Carrot,
+    icon: ChartBarIcon,
     current: false,
   },
   {
     name: "Fruitarian",
     href: "/dashboard/fruitarian",
-    icon: Fruit,
+    icon: ChartBarIcon,
     current: false,
   },
   {
