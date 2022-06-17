@@ -14,7 +14,7 @@ const HomeData = {
 const NavigationControl = [
   {
     id: 1,
-    name: "Pescaterian",
+    name: "Pescaterian",c
     svg: require("../Assets/Images/koi-fish.svg"),
   },
   {
