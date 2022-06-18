@@ -31,8 +31,8 @@
 }
 
 .post-header-img{
-    background-image: url("../../Assets/Images/Frame21.png");
     height: 13rem;
+    background: linear-gradient(348.91deg, #FFE600 -22.93%, rgba(253, 228, 6, 0.968646) -22.91%, rgba(253, 228, 7, 0.963542) -22.9%, #F83F05 53.2%);
 }
 
 

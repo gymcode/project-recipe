@@ -6,7 +6,7 @@ import { ReactComponent as Bookmark } from "../Assets/Icons/bookmark-outline.svg
 const DashboardHeader = ({ children, percentage, menus, views, bookmarks }) => {
   return (
     <div className="">
-      <div className="grid grid-cols-2 h-60 my-5 gap-16 px-10">
+      <div className="grid lg:grid-cols-2 md:grid-cols-2 lg:grid-rows-none md:grid-rows-none grid-cols-none grid-rows-1 lg:h-60 md:h-60 my-5 gap-16 px-10">
         <div className="category-background w-full rounded-2xl shadow-lg border border-gray-100 p-7">
           <h2 className="kreon-font text-lg">Category Description</h2>
           <div className="imprima-font font-medium pt-6 text-[0.8rem] tracking-wider">

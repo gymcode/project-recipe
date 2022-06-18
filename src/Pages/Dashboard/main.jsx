@@ -92,7 +92,7 @@ export default function Example() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
-    <div className="h-screen flex overflow-hidden bg-gray-100">
+    <div className="h-screen flex overflow-hidden bg-gray-100 ">
       <Transition.Root show={sidebarOpen} as={Fragment}>
         <Dialog
           as="div"
@@ -336,6 +336,9 @@ export default function Example() {
               </div>
               {/* /End replace */}
             </div>
+          </div>
+          <div>
+
           </div>
         </main>
       </div>

@@ -19,6 +19,31 @@ const Pescaterian = () => {
           <h2 className="kreon-font ">
             Explore more with the pescaterian category...
           </h2>
+          <div className="mt-7 flex flex-wrap">
+            <div className="dash-card lg:w-[30%] w-[80%] h-48 mb-8 ml-10 rounded-r-lg shadow-md bg-blue-200 grid grid-cols-2">
+              <div className="lg:w-56 xl:w-56 w-40 h-full bg-cover bg-center" style={{backgroundImage: `url(${require("../../../Assets/Images/pexels-pixabay-414262.jpg")})`}}/>
+              <div className="grid grid-rows-6 w-full">
+                <div className="row-span-2 kreon-font text-lg items-center flex justify-center">Title goes here</div>
+                <div className="row-span-3">dasd</div>
+                <div>dasda</div>
+              </div>
+            </div>
+            {/* <div className="bg-red-300 lg:w-[30%] w-[80%] h-48 mb-8 ml-10">
+              csdcds
+            </div>
+            <div className="bg-red-300 lg:w-[30%] w-[80%] h-48 mb-8 ml-10">
+              csdcds
+            </div>
+            <div className="bg-red-300 lg:w-[30%] w-[80%] h-48 mb-8 ml-10">
+              csdcds
+            </div>
+            <div className="bg-red-300 lg:w-[30%] w-[80%] h-48 mb-8 ml-10">
+              csdcds
+            </div> */}
+          </div>
+        </div>
+        <div>
+          possible pagination 
         </div>
       </div>
     </div>
