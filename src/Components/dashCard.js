@@ -13,7 +13,7 @@ const DashboardCard = ({ title, score, time, image, id }) => {
         <div
           className="lg:w-56 xl:w-56 w-40 h-full bg-cover bg-center"
           style={{
-            backgroundImage: `url(${require("../Assets/Images/pexels-pixabay-414262.jpg")})`,
+            backgroundImage: `url(${image})`,
           }}
         />
         <div className="grid grid-rows-7 w-full p-2">
@@ -32,7 +32,7 @@ const DashboardCard = ({ title, score, time, image, id }) => {
                     Health Score
                   </h2>
                   <p className="text-sm text-gray-500 imprima-font">
-                    {score} score
+                    {score} <span className="-ml-1">%</span> score
                   </p>
                 </div>
               </div>

@@ -1,6 +1,17 @@
 import DashboardHeader from "../../../Components/dashboardHeader";
+import { useFetch } from "../../../Hooks";
+import { Endpoints } from "../../../services/endpoints";
+
+// components
+import DashboardCard from "../../../Components/dashCard";
 
 const Fruitarian = () => {
+  const searchEndpoint = `${Endpoints.SEARCH()}&diet=fuitarian&number=6&addRecipeNutrition=true`;
+  const dataObject = useFetch(
+    searchEndpoint,
+    { isLoading: true, data: null },
+    "fuitarian-section"
+  );
   return (
     <div className="">
       <div>
@@ -16,9 +27,19 @@ const Fruitarian = () => {
         </DashboardHeader>
         <div className="mt-7">
           <h2 className="kreon-font ">
-            Explore more with the fruitarian category...
+            Explore more with the pescaterian category...
           </h2>
+          <div className="mt-7 flex flex-wrap">
+            {dataObject.isLoading ? (
+              <>this is me</>
+            ) : (
+              dataObject.data.results.map((item) => {
+                return <DashboardCard title={item.title} id={item.id} score={item.healthScore} time={item.readyInMinutes} image={item.image}/>;
+              })
+            )}
+          </div>
         </div>
+        <div>possible pagination</div>
       </div>
     </div>
   );
