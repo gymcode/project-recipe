@@ -67,7 +67,7 @@ function MainComponent() {
                 you consume everyday
               </p>
             </motion.div>
-            <Link to={"/category"}>
+            <Link to={"/dashboard"}>
               <motion.div
                 initial={{ y: 50, opacity: 0.5 }}
                 animate={{ y: 0, opacity: 1 }}
